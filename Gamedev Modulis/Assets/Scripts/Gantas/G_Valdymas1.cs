@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Valdymas : MonoBehaviour
+public class G_Valdymas1 : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 3000f;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -20,6 +20,6 @@ public class Valdymas : MonoBehaviour
         float zAJud = Input.GetAxis("Vertical");
 
         // Velocity duoda pastumima (jega) ir nustatau palei kurias asis valdysiu. Time.deltaTime 
-        rb.velocity = new Vector3(xAJud*speed, rb.velocity.y, zAJud*speed)* Time.deltaTime;
+        rb.velocity = new Vector3(xAJud * speed, rb.velocity.y, zAJud * speed) * Time.deltaTime;
     }
 }
