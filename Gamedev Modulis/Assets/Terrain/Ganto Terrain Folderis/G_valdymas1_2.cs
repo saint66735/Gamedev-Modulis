@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class G_valdymas1_2 : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float speed = 1f;
+    public float speed = 20f;
     public float Sensitivity = 100;
     public GameObject Body;
+    Rigidbody rb;
     float xRot = 0;
-    public float jumpSpeed = 100;
+
+    // Jumping
+    public float jumpForce = 100;
     bool isGrounded;
     public LayerMask groundMask;
     public Transform groundCheck;
+    bool isjumping;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        rb = Body.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -23,31 +28,42 @@ public class Controller : MonoBehaviour
     {
         float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
-        
+
         xRot -= mouseY;
-        xRot = Mathf.Clamp(xRot,-90f, 90f);
+        xRot = Mathf.Clamp(xRot, -90f, 90f);
 
         float moveFw = Input.GetAxis("Vertical");
         float moveSide = Input.GetAxis("Horizontal");
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
         //Vector3 dir = Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
-        Body.GetComponent<Rigidbody>().velocity = Body.transform.right*moveSide * speed + Body.transform.forward* moveFw*speed;
+        rb.velocity = Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
         //Body.GetComponent<Rigidbody>().AddForce(dir);
 
 
         Body.transform.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
 
-        if(Input.GetButtonDown("Jump")&&isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Body.GetComponent<Rigidbody>().AddForce(Vector3.up*jumpSpeed);
-            //Body.GetComponent<Rigidbody>().velocity += Body.transform.up*jumpSpeed;
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //isjumping = true;
         }
-        if(!isGrounded)
+        //else { isjumping = false; }
+
+        if (!isGrounded)
         {
-            Body.GetComponent<Rigidbody>().velocity -= new Vector3(0, 5, 0);
+            rb.velocity -= new Vector3(0, 5, 0);
         }
+
+    }
+
+    void FixedUpdate()
+    {
+        //if (isjumping) 
+        //{
+        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        //}
 
     }
 }
