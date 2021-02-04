@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,10 @@ public class G_valdymas1_2 : MonoBehaviour
     public LayerMask groundMask;
     public Transform groundCheck;
     bool isjumping;
+    // taisymas rb.veloc
+    private Vector3 jumping;
+    public float dragCoficientas = 1f;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,34 +41,64 @@ public class G_valdymas1_2 : MonoBehaviour
         float moveSide = Input.GetAxis("Horizontal");
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
-        //Vector3 dir = Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
-        rb.velocity = Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
-        //Body.GetComponent<Rigidbody>().AddForce(dir);
+
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        {
+            if (rb.velocity.magnitude < 5)
+            {
+                rb.velocity += Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
+            }
+        }
+
+        if(!Input.GetButton("Horizontal")  || !Input.GetButton("Vertical"))
+        {
+            if (rb.velocity.magnitude >= 0.5 && isGrounded == true)
+            {
+                rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.01f;
+            }
+        }
+
 
 
         Body.transform.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            //isjumping = true;
+            jump();
+            isjumping = true;
         }
-        //else { isjumping = false; }
+        else { 
+            
+            isjumping = false;
+
+
+        }
 
         if (!isGrounded)
         {
-            rb.velocity -= new Vector3(0, 5, 0);
+            jumping = new Vector3(0, -5, 0);
         }
 
+
+
+        //Vector3 curVel = rb.velocity;
+        //Vector3 xzVel = new Vector3(curVel.x, 0, curVel.z);
+        //rb.velocity -= xzVel * dragCoficientas;
+
+    }
+
+    private void jump()
+    {
+        isGrounded = false;
+        rb.AddForce(Vector3.up * jumpForce);
     }
 
     void FixedUpdate()
     {
-        //if (isjumping) 
-        //{
-        //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        //}
+
 
     }
+
+    
 }
