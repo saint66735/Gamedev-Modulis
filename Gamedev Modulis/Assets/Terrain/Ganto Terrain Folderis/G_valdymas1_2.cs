@@ -43,20 +43,14 @@ public class G_valdymas1_2 : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
 
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-        {
             if (rb.velocity.magnitude < 5)
-            {
                 rb.velocity += Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
-            }
-        }
 
-        if(!Input.GetButton("Horizontal")  || !Input.GetButton("Vertical"))
-        {
-            if (rb.velocity.magnitude >= 0.5 && isGrounded == true)
-            {
+
+        else if (rb.velocity.magnitude >= 0.5 && isGrounded == true)            
                 rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.01f;
-            }
-        }
+            
+        
 
 
 
