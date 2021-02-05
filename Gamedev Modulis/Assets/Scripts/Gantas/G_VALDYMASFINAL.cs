@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class G_valdymas1_2 : MonoBehaviour
+public class G_VALDYMASFINAL : MonoBehaviour
 {
+
     // Movement
     public float speed = 20f;
     public float Sensitivity = 100;
@@ -78,6 +79,4 @@ public class G_valdymas1_2 : MonoBehaviour
     }
 
 
-
-    
 }

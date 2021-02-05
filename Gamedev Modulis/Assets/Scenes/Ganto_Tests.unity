@@ -373,5 +373,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4530392439585022296, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530392439726948497, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
+--- !u!1 &4530392439304770947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4530392439585022298, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
+  m_PrefabInstance: {fileID: 4530392439304770946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4530392439304770948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530392439304770947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1621c037979ec534faa42227d24c86a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  Sensitivity: 100
+  Body: {fileID: 0}
+  jumpForce: 10
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 0}
