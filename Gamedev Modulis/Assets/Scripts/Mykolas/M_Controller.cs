@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Controller : MonoBehaviour
+public class M_Controller : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 1f;
@@ -13,6 +14,7 @@ public class Controller : MonoBehaviour
     bool isGrounded;
     public LayerMask groundMask;
     public Transform groundCheck;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -27,13 +29,13 @@ public class Controller : MonoBehaviour
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot,-90f, 90f);
 
-        float moveFw = Input.GetAxis("Vertical");
-        float moveSide = Input.GetAxis("Horizontal");
+        float moveFw = Input.GetAxisRaw("Vertical");
+        float moveSide = Input.GetAxisRaw("Horizontal");
+
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
-        //Vector3 dir = Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
+
         Body.GetComponent<Rigidbody>().velocity = Body.transform.right*moveSide * speed + Body.transform.forward* moveFw*speed;
-        //Body.GetComponent<Rigidbody>().AddForce(dir);
 
 
         Body.transform.Rotate(Vector3.up * mouseX);
@@ -41,8 +43,14 @@ public class Controller : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")&&isGrounded)
         {
+<<<<<<< Updated upstream:Gamedev Modulis/Assets/Scripts/Controller.cs
             Body.GetComponent<Rigidbody>().AddForce(Vector3.up*jumpSpeed);
             //Body.GetComponent<Rigidbody>().velocity += Body.transform.up*jumpSpeed;
+=======
+            //Body.GetComponent<Rigidbody>().AddForce(0, jumpSpeed, 0);
+            Body.GetComponent<Rigidbody>().velocity += Body.transform.up*jumpSpeed;
+            Debug.Log("Should be jumpin");
+>>>>>>> Stashed changes:Gamedev Modulis/Assets/Scripts/Mykolas/M_Controller.cs
         }
         if(!isGrounded)
         {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6448376902039005008}
   - component: {fileID: 6448376902039005009}
   - component: {fileID: 6448376902039005010}
+  - component: {fileID: 8603281236738752335}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -94,7 +95,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6448376902039005011}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -115,6 +116,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!195 &8603281236738752335
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448376902039005011}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6448376902066844156
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +226,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -247,5 +270,5 @@ MonoBehaviour:
   jumpSpeed: 100
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   groundCheck: {fileID: 6448376902066844155}
