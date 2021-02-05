@@ -43,14 +43,11 @@ public class M_Controller : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")&&isGrounded)
         {
-<<<<<<< Updated upstream:Gamedev Modulis/Assets/Scripts/Controller.cs
             Body.GetComponent<Rigidbody>().AddForce(Vector3.up*jumpSpeed);
             //Body.GetComponent<Rigidbody>().velocity += Body.transform.up*jumpSpeed;
-=======
             //Body.GetComponent<Rigidbody>().AddForce(0, jumpSpeed, 0);
             Body.GetComponent<Rigidbody>().velocity += Body.transform.up*jumpSpeed;
             Debug.Log("Should be jumpin");
->>>>>>> Stashed changes:Gamedev Modulis/Assets/Scripts/Mykolas/M_Controller.cs
         }
         if(!isGrounded)
         {
