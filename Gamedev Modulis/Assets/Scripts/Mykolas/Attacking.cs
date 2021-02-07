@@ -6,9 +6,9 @@ public class Attacking : MonoBehaviour
 {
     public GameObject attackPoint;
     public GameObject projectile;
-    public static bool isArcher=false;
-    public static bool isMage=false;
-    public static bool isFighter=false;
+    public bool isArcher=false;
+    public bool isMage=false;
+    public bool isFighter=false;
 
     // Start is called before the first frame update
     void Start()
