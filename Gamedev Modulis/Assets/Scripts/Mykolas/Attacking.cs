@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    public GameObject attackPoint;
+    public Transform attackPoint;
     public GameObject projectile;
     public bool isArcher=false;
     public bool isMage=false;
@@ -21,36 +21,27 @@ public class Attacking : MonoBehaviour
     {
         if (!isArcher && !isMage && !isFighter)
             Debug.Log("Choose a class!");
-        Vector3 attackPosition = new Vector3(attackPoint.transform.position.x, attackPoint.transform.position.y, attackPoint.transform.position.z);
+        //Vector3 attackPosition = new Vector3(attackPoint.transform.position.x, attackPoint.transform.position.y, attackPoint.transform.position.z);
         //int layerMask = 1 << 8;
 
         if (Input.GetMouseButtonDown(0)&&isArcher)
         {
             GameObject instance;
-            instance = Instantiate(projectile, attackPosition, Quaternion.Euler(attackPoint.transform.right));
-            instance.transform.Rotate(attackPoint.transform.forward);
-            instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 300);
+            instance = Instantiate(projectile, attackPoint.position,Quaternion.identity);
+            instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
+            instance.GetComponent<ArrowKill>().Setup(1, transform.parent.parent.tag);
+            instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 500);
         }
 
 
         if(Input.GetMouseButtonDown(0)&&isMage)
         {
             GameObject instance;
-            instance = Instantiate(projectile, attackPosition, attackPoint.transform.rotation);
+            instance = Instantiate(projectile, attackPoint.position, Quaternion.identity);
             instance.GetComponent<Rigidbody>().useGravity = false;
+            instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
             instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 3000);
             instance.GetComponent<ArrowKill>().isMagic = true;
-            /*RaycastHit hit;
-            if(Physics.Raycast(attackPosition, attackPoint.transform.forward, out hit,Mathf.Infinity,layerMask))
-            {
-                Debug.DrawRay(attackPosition, transform.forward*hit.distance, Color.red);
-                Debug.Log("Gottem");
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
-            }*/
         }
     }
 }
