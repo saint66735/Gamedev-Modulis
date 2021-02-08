@@ -6,9 +6,13 @@ public class ArrowKill : MonoBehaviour
 {
     public float lifetime = 2f;
     public bool isMagic = false;
+    string shooter;
+    float damage;
     // Start is called before the first frame update
-    void Start()
+    internal void Setup(float damage,string shooter)
     {
+        this.damage = damage;
+        this.shooter = shooter;
         
     }
 
@@ -20,6 +24,10 @@ public class ArrowKill : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.CompareTag(shooter))
+        {
+            return;
+        }
         if (isMagic)
             Destroy(gameObject);
         else
