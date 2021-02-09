@@ -31,6 +31,10 @@ public class ArrowKill : MonoBehaviour
         if (isMagic)
             Destroy(gameObject);
         else
+        {
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.isKinematic = true;
             Destroy(gameObject, lifetime);
+        }            
     }
 }
