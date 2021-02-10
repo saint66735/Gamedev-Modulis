@@ -5,7 +5,8 @@ using UnityEngine;
 public class Attacking : MonoBehaviour
 {
     public Transform attackPoint;
-    public GameObject projectile;
+    public GameObject arrow;
+    public GameObject spell;
     public bool isArcher=false;
     public bool isMage=false;
     public bool isFighter=false;
@@ -27,9 +28,9 @@ public class Attacking : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&&isArcher)
         {
             GameObject instance;
-            instance = Instantiate(projectile, attackPoint.position,Quaternion.identity);
+            instance = Instantiate(arrow, attackPoint.position,Quaternion.identity);
             instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
-            instance.GetComponent<ArrowKill>().Setup(1, transform.parent.parent.tag);
+            instance.GetComponent<ArrowKill>().Setup(1, transform.tag);
             instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 500);
         }
 
@@ -37,11 +38,10 @@ public class Attacking : MonoBehaviour
         if(Input.GetMouseButtonDown(0)&&isMage)
         {
             GameObject instance;
-            instance = Instantiate(projectile, attackPoint.position, Quaternion.identity);
-            instance.GetComponent<Rigidbody>().useGravity = false;
+            instance = Instantiate(spell, attackPoint.position, Quaternion.identity);
             instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
             instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 3000);
-            instance.GetComponent<ArrowKill>().isMagic = true;
+            instance.GetComponent<ArrowKill>().Setup(1, transform.tag);
         }
     }
 }
