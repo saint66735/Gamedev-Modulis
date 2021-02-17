@@ -24,7 +24,7 @@ public class ArrowKill : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag(shooter))
+        if(collision.gameObject.CompareTag(shooter)||collision.gameObject.CompareTag("Projectile"))
         {
             return;
         }

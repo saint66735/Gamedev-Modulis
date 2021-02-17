@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour
     {
         if (collision.collider.tag == "Projectile")
         {
-            Destroy(gameObject);
+            collision.collider.gameObject.transform.parent = gameObject.transform;
+            Destroy(gameObject,3);
             ScoreCounter.scoreValue++;
         }
     }

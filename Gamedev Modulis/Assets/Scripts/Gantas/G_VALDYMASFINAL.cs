@@ -37,9 +37,6 @@ public class G_VALDYMASFINAL : MonoBehaviour
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90f, 90f);
 
-        //yRot += mouseX;
-        //yRot = Mathf.Clamp(yRot, -90, 90f);// cmlap.(kokia rotacija, minverte, maxverte)
-
         float moveFw = Input.GetAxis("Vertical");
         float moveSide = Input.GetAxis("Horizontal");
 
