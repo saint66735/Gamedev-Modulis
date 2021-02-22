@@ -6,6 +6,7 @@ public class ArrowKill : MonoBehaviour
 {
     public float lifetime = 2f;
     public bool isMagic = false;
+    public GameObject hitExplosion;
     string shooter;
     float damage;
     // Start is called before the first frame update
@@ -29,7 +30,11 @@ public class ArrowKill : MonoBehaviour
             return;
         }
         if (isMagic)
+        {            
+            //GameObject instance = Instantiate(hitExplosion,collision.);
+            //Destroy(instance, lifetime);
             Destroy(gameObject);
+        }            
         else
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();

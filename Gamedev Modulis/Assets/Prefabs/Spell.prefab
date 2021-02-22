@@ -221,3 +221,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 2
   isMagic: 1
+  hitExplosion: {fileID: 3331473759611580077, guid: 213a5aac86c65a54fb8e7f8f90367038, type: 3}
