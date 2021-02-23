@@ -10,6 +10,10 @@ public class Attacking : MonoBehaviour
     public bool isArcher=false;
     public bool isMage=false;
     public bool isFighter=false;
+    [SerializeField]
+    float magicDamage = 50;
+    [SerializeField]
+    float arrowDamage = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,7 @@ public class Attacking : MonoBehaviour
             GameObject instance;
             instance = Instantiate(arrow, attackPoint.position,Quaternion.identity);
             instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
-            instance.GetComponent<ArrowKill>().Setup(1, transform.tag);
+            instance.GetComponent<ArrowKill>().Setup(arrowDamage, transform.tag);
             instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 500);
         }
 
@@ -41,7 +45,7 @@ public class Attacking : MonoBehaviour
             instance = Instantiate(spell, attackPoint.position, Quaternion.identity);
             instance.transform.rotation = Quaternion.LookRotation(attackPoint.up);
             instance.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * 3000);
-            instance.GetComponent<ArrowKill>().Setup(1, transform.tag);
+            instance.GetComponent<ArrowKill>().Setup(magicDamage, transform.tag);
         }
     }
 }

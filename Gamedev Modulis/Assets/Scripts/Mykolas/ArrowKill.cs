@@ -8,7 +8,7 @@ public class ArrowKill : MonoBehaviour
     public bool isMagic = false;
     public GameObject hitExplosion;
     string shooter;
-    float damage;
+    public float damage;
     // Start is called before the first frame update
     internal void Setup(float damage,string shooter)
     {
@@ -30,15 +30,19 @@ public class ArrowKill : MonoBehaviour
             return;
         }
         if (isMagic)
-        {            
-            //GameObject instance = Instantiate(hitExplosion,collision.);
-            //Destroy(instance, lifetime);
+        {
+            ContactPoint explosionLocation = collision.GetContact(0);
+            Vector3 pos = explosionLocation.point;
+            GameObject instance = Instantiate(hitExplosion,pos,Quaternion.Euler(0,0,0));
+            Destroy(instance, lifetime);
             Destroy(gameObject);
         }            
         else
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.isKinematic = true;
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            gameObject.GetComponent<Collider>().enabled = false;
             Destroy(gameObject, lifetime);
         }            
     }

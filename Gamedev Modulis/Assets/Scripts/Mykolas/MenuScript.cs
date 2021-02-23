@@ -28,6 +28,7 @@ public class MenuScript : MonoBehaviour
         instance.GetComponent<Attacking>().isMage = false;
         Debug.Log("I chose A");
         menuCamera.enabled = false;
+        menuCamera.GetComponent <AudioListener>().enabled = false;
         buttons.SetActive(false);
     }
     public void SelectFighter()
@@ -37,6 +38,7 @@ public class MenuScript : MonoBehaviour
         instance.GetComponent<Attacking>().isFighter = true;
         instance.GetComponent<Attacking>().isMage = false;
         menuCamera.enabled = false;
+        menuCamera.GetComponent<AudioListener>().enabled = false;
         buttons.SetActive(false);
         Debug.Log("I chose F");
     }
@@ -47,6 +49,7 @@ public class MenuScript : MonoBehaviour
         instance.GetComponent<Attacking>().isFighter = false;
         instance.GetComponent<Attacking>().isMage = true;
         menuCamera.enabled = false;
+        menuCamera.GetComponent<AudioListener>().enabled = false;
         buttons.SetActive(false);
         Debug.Log("I chose M");
     }

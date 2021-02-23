@@ -912,10 +912,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plug and Play
       objectReference: {fileID: 0}
-    - target: {fileID: 2423179883925938912, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2423179883925938913, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -972,10 +968,6 @@ PrefabInstance:
     - target: {fileID: 4545168450731170888, guid: 04e1b7329269cda4ea7e79a70b0d60c0, type: 3}
       propertyPath: m_Name
       value: Arrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 4545168450731170888, guid: 04e1b7329269cda4ea7e79a70b0d60c0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4545168450731170996, guid: 04e1b7329269cda4ea7e79a70b0d60c0, type: 3}
       propertyPath: m_RootOrder
