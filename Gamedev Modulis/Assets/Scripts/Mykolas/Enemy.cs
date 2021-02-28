@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : BaseEntity
 {
-    float health = 100f;
-    bool belowZero = false;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 100;
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -17,24 +17,7 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.y < -100)
             Destroy(gameObject);
+        rb.AddForce(0, 0.5f, 0);
     }
-    private void TakeDamage(float dmg)
-    {
-        health -= dmg;
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Projectile")
-        {
-            TakeDamage(collision.collider.GetComponent<ArrowKill>().damage);
-            collision.collider.gameObject.transform.parent = gameObject.transform;
-            if(health<=0&&!belowZero)
-            {
-                Debug.Log("I'm dead");
-                //Destroy(gameObject, 3);
-                ScoreCounter.scoreValue++;
-                belowZero = true;
-            }            
-        }
-    }
+    
 }

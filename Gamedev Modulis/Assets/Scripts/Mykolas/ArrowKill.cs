@@ -6,9 +6,12 @@ public class ArrowKill : MonoBehaviour
 {
     public float lifetime = 2f;
     public bool isMagic = false;
+    public bool isSword = false;
+    public bool isArrow = false;
     public GameObject hitExplosion;
-    string shooter;
+    public string shooter;
     public float damage;
+
     // Start is called before the first frame update
     internal void Setup(float damage,string shooter)
     {
@@ -36,14 +39,20 @@ public class ArrowKill : MonoBehaviour
             GameObject instance = Instantiate(hitExplosion,pos,Quaternion.Euler(0,0,0));
             Destroy(instance, lifetime);
             Destroy(gameObject);
-        }            
-        else
+            Debug.Log("MAGIC");
+        } 
+        if (isSword)
+        {
+            Debug.Log("Tis but a scratch");
+        }
+        if (isArrow)
         {
             Rigidbody rb = gameObject.GetComponent<Rigidbody>();
             rb.isKinematic = true;
-            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            //rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
             gameObject.GetComponent<Collider>().enabled = false;
             Destroy(gameObject, lifetime);
-        }            
+            Debug.Log("Im an arrow");
+        }
     }
 }
