@@ -544,6 +544,8 @@ MonoBehaviour:
   menuCamera: {fileID: 2423179885716301784}
   buttons: {fileID: 2423179884304329698}
   sword: {fileID: 7078003158077247034, guid: a0e4e58eefb108245ac42ee36a7a3691, type: 3}
+  bow: {fileID: 6998826752763905963, guid: f6e6c643f841d984eb73cd757fe22f17, type: 3}
+  spell: {fileID: 2721552305604762130, guid: 59656a3b3b576e743b10e93e91d70759, type: 3}
 --- !u!1 &2423179884662023189
 GameObject:
   m_ObjectHideFlags: 0

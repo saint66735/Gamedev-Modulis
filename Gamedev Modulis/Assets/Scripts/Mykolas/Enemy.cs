@@ -16,7 +16,7 @@ public class Enemy : BaseEntity
     {
         if (transform.position.y < -100)
             Destroy(gameObject);
-        rb.AddForce(0, 0.5f, 0);
+        rb.AddForce(0, 0.25f, 0);
     }
     
 }

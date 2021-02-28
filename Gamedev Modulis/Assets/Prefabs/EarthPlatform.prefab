@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 3613057088112183960}
   - component: {fileID: 1567497923832495698}
   - component: {fileID: 7239654080188022366}
-  m_Layer: 0
+  - component: {fileID: 756699921}
+  - component: {fileID: 756699915}
+  - component: {fileID: 756699920}
+  m_Layer: 3
   m_Name: EarthPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062888539330256775}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 818.90533, y: 157.27, z: 505.81314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9197671327003542131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &3613057088112183960
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -96,6 +99,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.073079, y: 9.41, z: 0.54}
   m_Center: {x: 0, y: 0, z: 0.34}
+--- !u!65 &756699921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062888539330256775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.073079, y: 9.41, z: 1.4688323}
+  m_Center: {x: 0, y: -4.3262674e-15, z: 0.8044342}
+--- !u!95 &756699915
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062888539330256775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7fc11cfffaf4fcf4d9d0dde7ef13d843, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &756699920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062888539330256775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2557347f18e8d0b48b8807fb9bd6ba9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1 &4735015232716654855
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9197671327003542131}
   - component: {fileID: 6785531463128751577}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TriggerLift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +184,7 @@ BoxCollider:
   m_GameObject: {fileID: 4735015232716654855}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
