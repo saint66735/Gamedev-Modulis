@@ -1308,6 +1308,8 @@ MonoBehaviour:
   isArcher: 0
   isMage: 0
   isFighter: 0
+  magicDamage: 50
+  arrowDamage: 50
 --- !u!1 &4278439748101597362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1386,7 @@ GameObject:
   - component: {fileID: 4530392439585022296}
   - component: {fileID: 421452551}
   - component: {fileID: 4877133980310156554}
+  - component: {fileID: 3250539775740494903}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1472,6 +1475,7 @@ MonoBehaviour:
   speed: 1
   Sensitivity: 100
   Body: {fileID: 3611401167646981571}
+  dragForce: 0.09
   jumpForce: 30
   groundMask:
     serializedVersion: 2
@@ -1526,6 +1530,27 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 2b02531fd74d8a24a96653ba718db24f, type: 2}
+--- !u!114 &3250539775740494903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530392439585022298}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1621c037979ec534faa42227d24c86a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  sprint: 35
+  Sensitivity: 300
+  Body: {fileID: 3611401167646981571}
+  jumpForce: 100
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheck: {fileID: 4530392440245781798}
 --- !u!1 &4530392440245781793
 GameObject:
   m_ObjectHideFlags: 0
