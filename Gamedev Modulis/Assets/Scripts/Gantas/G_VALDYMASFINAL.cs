@@ -8,7 +8,8 @@ public class G_VALDYMASFINAL : MonoBehaviour
 
     // Movement
     public float speed = 20f;
-    public float Sensitivity = 100;
+    public float sprint = 35f;
+    public float Sensitivity = 300;
     public GameObject Body;
     Rigidbody rb;
     float xRot = 0;
@@ -40,15 +41,15 @@ public class G_VALDYMASFINAL : MonoBehaviour
         float moveFw = Input.GetAxis("Vertical");
         float moveSide = Input.GetAxis("Horizontal");
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
 
-        // Handmade Drag.
+        //Handmade Drag.
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
             if (rb.velocity.magnitude < 10)
                 rb.velocity += Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
 
             else if (rb.velocity.magnitude >= 0.5 && isGrounded == true)
-                rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.01f;
+                rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.6f;
 
         //Rotation
         Body.transform.Rotate(Vector3.up * mouseX); // palei kamera juda kunas
@@ -66,6 +67,10 @@ public class G_VALDYMASFINAL : MonoBehaviour
 
         if (!isGrounded)
             jumping = new Vector3(0, -5, 0);
+
+        //Sprint
+
+        
 
     }
 

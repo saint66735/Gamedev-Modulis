@@ -7,11 +7,13 @@ public class G_valdymas1_2 : MonoBehaviour
 {
     // Movement
     public float speed = 20f;
-    public float Sensitivity = 100;
+    public float Sensitivity = 300;
     public GameObject Body;
     Rigidbody rb;
     float xRot = 0;
     float yRot = 0;
+
+    public float dragForce = 0.09f;
 
     // Jumping
     public float jumpForce = 100;
@@ -30,8 +32,8 @@ public class G_valdymas1_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * Sensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Sensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Sensitivity * Time.deltaTime;
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90f, 90f);
@@ -39,8 +41,8 @@ public class G_valdymas1_2 : MonoBehaviour
         //yRot += mouseX;
         //yRot = Mathf.Clamp(yRot, -90, 90f);// cmlap.(kokia rotacija, minverte, maxverte)
 
-        float moveFw = Input.GetAxis("Vertical");
-        float moveSide = Input.GetAxis("Horizontal");
+        float moveFw = Input.GetAxisRaw("Vertical");
+        float moveSide = Input.GetAxisRaw("Horizontal");
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
 
@@ -50,7 +52,7 @@ public class G_valdymas1_2 : MonoBehaviour
                 rb.velocity += Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed;
 
             else if (rb.velocity.magnitude >= 0.5 && isGrounded == true)
-                rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.01f;
+                rb.velocity -= (Body.transform.right * moveSide * speed + Body.transform.forward * moveFw * speed) * 0.0001f;
 
         //Rotation
         Body.transform.Rotate(Vector3.up * mouseX); // palei kamera juda kunas
