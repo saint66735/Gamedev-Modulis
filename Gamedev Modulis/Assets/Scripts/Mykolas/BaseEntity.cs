@@ -24,7 +24,6 @@ public class BaseEntity : MonoBehaviour
             if (health <= 0 && alive)
             {
                 Debug.Log("I'm dead");
-                //Destroy(gameObject, 3);
                 ScoreCounter.scoreValue++;
                 alive = false;
             }
@@ -35,7 +34,6 @@ public class BaseEntity : MonoBehaviour
             if (health <= 0 && alive)
             {
                 Debug.Log("I'm dead");
-                //Destroy(gameObject, 3);
                 ScoreCounter.scoreValue++;
                 alive = false;
             }

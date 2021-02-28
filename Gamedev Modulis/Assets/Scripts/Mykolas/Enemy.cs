@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : BaseEntity
 {
     Rigidbody rb;
-    // Start is called before the first frame update
     void Start()
     {
         health = 100;
