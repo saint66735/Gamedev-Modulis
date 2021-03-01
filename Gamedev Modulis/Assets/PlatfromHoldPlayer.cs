@@ -30,6 +30,8 @@ public class PlatfromHoldPlayer : MonoBehaviour
         {
             anim.speed = 1;
         }
+        if (rb != null && rb.velocity.magnitude > 10)
+            rb.isKinematic = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,6 +42,7 @@ public class PlatfromHoldPlayer : MonoBehaviour
             if (rb!=null)
             {
                 mass += rb.mass;
+                rb.isKinematic = true;
             }
         }
             
@@ -53,7 +56,8 @@ public class PlatfromHoldPlayer : MonoBehaviour
             mass = 0;
             if (rb != null)
             {
-                rb.velocity+=gameObject.GetComponent<Rigidbody>().velocity;
+                rb.isKinematic = false;
+                rb.velocity+=gameObject.GetComponent<Rigidbody>().velocity;                
             }
         }
             
