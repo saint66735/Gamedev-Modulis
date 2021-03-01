@@ -12,7 +12,7 @@ public class PlatfromHoldPlayer : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-    private void Update()//100=0.1, 60=0.5, 30=1
+    private void Update()
     {
         if(mass>=100)
         {
@@ -53,13 +53,12 @@ public class PlatfromHoldPlayer : MonoBehaviour
         if (other.tag != "Ground")
         {
             other.transform.parent = null;
-            mass = 0;
+            mass -= rb.mass;
             if (rb != null)
             {
                 rb.isKinematic = false;
                 rb.velocity+=gameObject.GetComponent<Rigidbody>().velocity;                
             }
-        }
-            
+        }            
     }
 }
