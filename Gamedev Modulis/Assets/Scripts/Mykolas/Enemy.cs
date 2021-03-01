@@ -15,8 +15,7 @@ public class Enemy : BaseEntity
     void Update()
     {
         if (transform.position.y < -100)
-            Destroy(gameObject);      
-        
+            Destroy(gameObject);
     }
 
     public override void Die()

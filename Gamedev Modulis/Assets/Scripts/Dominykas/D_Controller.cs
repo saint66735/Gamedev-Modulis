@@ -37,8 +37,9 @@ public class D_Controller : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
         //movement
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        //isGrounded = controller.isGrounded;
 
-        if (isGrounded && velocity.y < 0)
+        if (controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -63,6 +64,7 @@ public class D_Controller : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            Debug.Log("Bhop");
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

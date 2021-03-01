@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5403287407823307714}
   - component: {fileID: 2281371286198920629}
   - component: {fileID: -8102458493648829047}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sWORD
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad00c984ac415fc4abfca7bad28b2db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
   damage: 50
   attacked: 0
   attackDelay: 1

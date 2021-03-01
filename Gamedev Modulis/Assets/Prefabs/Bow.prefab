@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6998826752763905973}
   - component: {fileID: 6998826752763905962}
   - component: {fileID: -1766911436092804571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcddc4b0169ad744ab863e14ca03a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
   damage: 50
-  weaponModel: {fileID: 6998826752763905963}
   attacked: 0
   attackDelay: 1
   arrow: {fileID: 4545168450731170888, guid: 04e1b7329269cda4ea7e79a70b0d60c0, type: 3}

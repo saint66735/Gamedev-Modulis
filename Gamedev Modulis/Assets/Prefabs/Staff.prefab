@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2721552305604762124}
   - component: {fileID: 2721552305604762131}
   - component: {fileID: 8127656746942606441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc0f07f4aabaf3488711c9a2f4c24b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
   damage: 50
   attacked: 0
   attackDelay: 1
