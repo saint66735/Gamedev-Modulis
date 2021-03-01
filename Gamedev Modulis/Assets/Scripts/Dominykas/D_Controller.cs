@@ -9,7 +9,7 @@ public class D_Controller : MonoBehaviour
     public Transform playerBody;
     float xRotation = 0f;
     //movement
-    public CharacterController controller;
+    /*public CharacterController controller;
     public float speed;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -17,7 +17,7 @@ public class D_Controller : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     Vector3 velocity;
-    bool isGrounded;
+    bool isGrounded;*/
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class D_Controller : MonoBehaviour
 
         playerBody.Rotate(Vector3.up * mouseX);
         //movement
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        /*isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         //isGrounded = controller.isGrounded;
 
         if (controller.isGrounded && velocity.y < 0)
@@ -67,6 +67,6 @@ public class D_Controller : MonoBehaviour
             Debug.Log("Bhop");
         }
         velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);*/
     }
 }
