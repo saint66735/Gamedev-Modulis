@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class PlatfromHoldPlayer : MonoBehaviour
 {
-    public GameObject Player;
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Player) 
-        {
-
-            Player.transform.parent = transform;
-         
-        }
+        if(other.tag!="Ground")
+            other.transform.parent = gameObject.transform;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player)
-        {
-
-            Player.transform.parent = null;
-
-        }
+        if (other.tag != "Ground")
+            other.transform.parent = null;
     }
 }
