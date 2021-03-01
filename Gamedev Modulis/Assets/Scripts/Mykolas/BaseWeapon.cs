@@ -19,7 +19,7 @@ public class BaseWeapon : MonoBehaviour
     }
     virtual public void Upgrade()
     {
-
+        throw new NotImplementedException();
     }
 
     virtual public void Attack()

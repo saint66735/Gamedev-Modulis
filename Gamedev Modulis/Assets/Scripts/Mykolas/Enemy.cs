@@ -15,8 +15,15 @@ public class Enemy : BaseEntity
     void Update()
     {
         if (transform.position.y < -100)
-            Destroy(gameObject);
-        rb.AddForce(0, 0.25f, 0);
+            Destroy(gameObject);      
+        
     }
-    
+
+    public override void Die()
+    {
+        rb.isKinematic = false;
+        Debug.Log("I'm dead");
+        ScoreCounter.scoreValue++;
+        alive = false;
+    }
 }
