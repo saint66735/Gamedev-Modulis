@@ -21,18 +21,18 @@ public class BaseEntity : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Projectile" && !CompareTag(collision.collider.GetComponent<ArrowKill>().shooter))
+        if (collision.collider.tag == "Projectile" && !CompareTag(collision.collider.GetComponent<BaseProjectile>().shooter))
         {
-            TakeDamage(collision.collider.GetComponent<ArrowKill>().damage);
+            TakeDamage(collision.collider.GetComponent<BaseProjectile>().damage);
             collision.collider.gameObject.transform.parent = gameObject.transform;
             if (health <= 0 && alive)
             {
                 Die();
             }
         }
-        else if (collision.collider.tag == "Weapon" && !CompareTag(collision.collider.GetComponent<ArrowKill>().shooter))
+        else if (collision.collider.tag == "Weapon" && !CompareTag(collision.collider.GetComponent<BaseWeapon>().attacker))
         {
-            TakeDamage(collision.collider.GetComponent<ArrowKill>().damage);
+            TakeDamage(collision.collider.GetComponent<BaseWeapon>().damage);
             if (health <= 0 && alive)
             {
                 Die();

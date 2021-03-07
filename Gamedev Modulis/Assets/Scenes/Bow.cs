@@ -10,7 +10,7 @@ public class Bow : BaseWeapon
         GameObject instance;
         instance = Instantiate(arrow, transform.position, Quaternion.identity);
         instance.transform.rotation = Quaternion.LookRotation(transform.up);
-        instance.GetComponent<ArrowKill>().Setup(damage, transform.parent.tag);
+        instance.GetComponent<BaseProjectile>().Setup(damage, transform.parent.tag, 100);
         instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 500);
         attacked = true;
     }

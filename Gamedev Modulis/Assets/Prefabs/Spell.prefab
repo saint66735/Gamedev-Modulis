@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4234929071491080877}
   - component: {fileID: 3922936074645149638}
   - component: {fileID: 5254738201990383721}
+  - component: {fileID: 3513906240909565504}
   m_Layer: 0
   m_Name: Spell
   m_TagString: Projectile
@@ -214,7 +215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6684427229704089533}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ccbcc2163b31bb47bcec3670f4c926c, type: 3}
   m_Name: 
@@ -226,3 +227,19 @@ MonoBehaviour:
   hitExplosion: {fileID: 3331473759611580077, guid: 213a5aac86c65a54fb8e7f8f90367038, type: 3}
   shooter: 
   damage: 50
+--- !u!114 &3513906240909565504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684427229704089533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a00c15f93afc0418b621a86d31bdcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  shooter: 
+  lifetime: 4
+  hitExplosion: {fileID: 3331473759611580077, guid: 213a5aac86c65a54fb8e7f8f90367038, type: 3}

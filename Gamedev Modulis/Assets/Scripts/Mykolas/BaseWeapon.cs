@@ -8,10 +8,11 @@ public class BaseWeapon : MonoBehaviour
     public float damage;
     public bool attacked = false;
     public float attackDelay = 1;
+    public string attacker;
 
     virtual public void Setup()
     {
-
+        attacker = transform.parent.tag;
     }
     private void Start()
     {

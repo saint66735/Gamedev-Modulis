@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
     public GameObject player;
     public Transform spawnPoint;
     public Camera menuCamera;
+    public Slider slider;
     public GameObject buttons;
     public GameObject sword;
     public GameObject bow;
@@ -34,5 +35,6 @@ public class MenuScript : MonoBehaviour
         menuCamera.GetComponent<AudioListener>().enabled = false;
         buttons.SetActive(false);
         return instance;
+        slider.enabled = false;
     }
 }

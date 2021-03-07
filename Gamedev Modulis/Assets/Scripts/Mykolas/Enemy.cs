@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : BaseEntity
 {
     Rigidbody rb;
+    [SerializeField]
+    int xpValue = 10;
+    int xpTemp;
     void Start()
     {
         health = 100;
@@ -23,6 +26,9 @@ public class Enemy : BaseEntity
         rb.isKinematic = false;
         Debug.Log("I'm dead");
         ScoreCounter.scoreValue++;
+        xpTemp = Player.xp + xpValue;
+        Player.xp = xpTemp;
+        Debug.Log(xpTemp);
         alive = false;
     }
 }
