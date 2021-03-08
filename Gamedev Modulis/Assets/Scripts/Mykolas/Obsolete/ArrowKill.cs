@@ -16,8 +16,7 @@ public class ArrowKill : MonoBehaviour
     internal void Setup(float damage,string shooter)
     {
         this.damage = damage;
-        this.shooter = shooter;
-        
+        this.shooter = shooter;        
     }
 
     // Update is called once per frame

@@ -10,9 +10,9 @@ public class SpellWeapon : BaseWeapon
     {
         GameObject instance;
         instance = Instantiate(spell, transform.position, Quaternion.identity);
+        instance.GetComponent<BaseProjectile>().Setup(damage, transform.tag, 4);
         instance.transform.rotation = Quaternion.LookRotation(transform.up);
-        instance.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
-        instance.GetComponent<ArrowKill>().Setup(damage, transform.parent.tag);
+        instance.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);        
         attacked = true;
     }
 

@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4545168450731170891}
   - component: {fileID: 4545168450731170890}
   - component: {fileID: 4545168450731170889}
-  - component: {fileID: -3485963578935630578}
   - component: {fileID: 7371188559369632052}
-  - component: {fileID: 7005400685981637661}
+  - component: {fileID: 8519801925211382585}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Projectile
@@ -99,24 +98,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &-3485963578935630578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4545168450731170888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccbcc2163b31bb47bcec3670f4c926c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 2
-  isMagic: 0
-  isSword: 0
-  isArrow: 1
-  hitExplosion: {fileID: 0}
-  damage: 0
 --- !u!54 &7371188559369632052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &7005400685981637661
+--- !u!114 &8519801925211382585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,6 +123,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4545168450731170888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d30b1c9ddb884e46ba14f2abed51129, type: 3}
+  m_Script: {fileID: 11500000, guid: 33f8b8a5923f19744971cc7fb8f1420a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
+  shooter: 
+  lifetime: 100
