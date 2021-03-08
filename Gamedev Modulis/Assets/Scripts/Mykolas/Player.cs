@@ -6,10 +6,9 @@ public class Player : BaseEntity
 {
     BaseJob job;
     public static string charName;
+    public float level = 1;
     [SerializeField]
-    float level=1;
-    [SerializeField]
-    public static int xp =0;
+    int xp = 0;
     float xpReq = 10;
     public Transform attackPoint;
     private BaseWeapon weapon;
@@ -47,9 +46,12 @@ public class Player : BaseEntity
     }
     void LevelUp()
     {
-        xp = 0;
-        xpReq += xpReq*2;
+        xpReq += xpReq * 2;
         level++;
         Debug.Log("lEVLE UP. New xp req is " + xpReq);
+    }
+    public void IncreaseXp(int xpValue)
+    {
+        xp += xpValue;
     }
 }

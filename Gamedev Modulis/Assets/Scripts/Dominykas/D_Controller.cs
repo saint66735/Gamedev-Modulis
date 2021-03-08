@@ -13,14 +13,13 @@ public class D_Controller : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log(mouseSens);
     }
 
     void Update()
     {
         //rotation
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSens * 3 * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSens * 3 * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

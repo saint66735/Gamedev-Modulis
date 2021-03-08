@@ -24,8 +24,8 @@ public class Arrow : BaseProjectile
         }
 
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        rb.isKinematic = true;
-        //rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
+        rb.isKinematic = true;        
         gameObject.GetComponent<Collider>().enabled = false;
         //Destroy(gameObject, lifetime);
         Debug.Log("Im an arrow");

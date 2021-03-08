@@ -6,12 +6,23 @@ public class MenuScript : MonoBehaviour
 {
     public GameObject player;
     public Transform spawnPoint;
-    public Camera menuCamera;
-    public Slider slider;
+    public GameObject menuCamera;
+    public GameObject sensitivity;
     public GameObject buttons;
     public GameObject sword;
     public GameObject bow;
     public GameObject spell;
+    public List<GameObject> enemies;
+    int i=0;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            enemies[i].SetActive(true);
+            i++;
+        }
+    }
 
     public void SelectArcher()
     {
@@ -31,10 +42,9 @@ public class MenuScript : MonoBehaviour
     Player CreatePlayer()
     {
         Player instance = Instantiate(player, spawnPoint).GetComponent<Player>();
-        menuCamera.enabled = false;
-        menuCamera.GetComponent<AudioListener>().enabled = false;
+        menuCamera.SetActive(false);
         buttons.SetActive(false);
-        return instance;
-        slider.enabled = false;
+        sensitivity.SetActive(false);
+        return instance;        
     }
 }
