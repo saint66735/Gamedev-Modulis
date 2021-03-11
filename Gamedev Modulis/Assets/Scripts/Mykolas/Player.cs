@@ -31,10 +31,9 @@ public class Player : BaseEntity
                 weapon.attacked = false;
             }
         }
-        if (Input.GetMouseButtonDown(0) && !weapon.attacked)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !weapon.attacked)
         {
             weapon.Attack();
-            weapon.attacked = true;
         }
         if (xp >= xpReq)
             LevelUp();
