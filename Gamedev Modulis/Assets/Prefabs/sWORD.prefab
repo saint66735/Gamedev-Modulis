@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6835924815597460261}
   - component: {fileID: 8735543119315349487}
   - component: {fileID: 7464879117671268482}
-  - component: {fileID: 5403287407823307714}
   - component: {fileID: 2281371286198920629}
   - component: {fileID: -8102458493648829047}
+  - component: {fileID: 609951399}
   m_Layer: 8
   m_Name: sWORD
   m_TagString: Weapon
@@ -101,25 +101,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4711208715938537054, guid: c0b7de2e04dbc1940ad846f57ef8f750, type: 3}
---- !u!114 &5403287407823307714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078003158077247034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccbcc2163b31bb47bcec3670f4c926c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: 2
-  isMagic: 0
-  isSword: 1
-  isArrow: 0
-  hitExplosion: {fileID: 0}
-  shooter: 
-  damage: 0
 --- !u!95 &2281371286198920629
 Animator:
   serializedVersion: 3
@@ -154,3 +135,20 @@ MonoBehaviour:
   damage: 50
   attacked: 0
   attackDelay: 1
+  attacker: 
+--- !u!54 &609951399
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078003158077247034}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
