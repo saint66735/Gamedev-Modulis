@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   alive: 1
+  level: 1
+  xp: 0
   attackPoint: {fileID: 1609228486}
 --- !u!143 &8038828703668629374
 CharacterController:
@@ -151,6 +153,7 @@ GameObject:
   - component: {fileID: 421452551}
   - component: {fileID: 4877133980310156554}
   - component: {fileID: 4109848198514998470}
+  - component: {fileID: 5139664760101231424}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -285,8 +288,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6818bea5b734d024cabd017524be9d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSens: 300
   playerBody: {fileID: 4131373807421564793}
+--- !u!114 &5139664760101231424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530392439585022298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9338587ed51f8d4fb67363f83b9cac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bobbingSpeed: 0.18
+  bobbingAmount: 0.2
+  midpoint: 2
 --- !u!1 &4530392440245781793
 GameObject:
   m_ObjectHideFlags: 0
