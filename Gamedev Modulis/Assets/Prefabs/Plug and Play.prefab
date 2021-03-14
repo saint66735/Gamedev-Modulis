@@ -841,13 +841,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3611401167646981571, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
-  spawnPoint: {fileID: 2423179883925938913}
-  menuCamera: {fileID: 2423179885716301784}
-  slider: {fileID: 2580264867949276394}
+  spawnPoint: {fileID: 0}
+  menuCamera: {fileID: 2423179885716301606}
+  sensitivity: {fileID: 284330676064247124}
   buttons: {fileID: 2423179884304329698}
   sword: {fileID: 7078003158077247034, guid: a0e4e58eefb108245ac42ee36a7a3691, type: 3}
   bow: {fileID: 6998826752763905963, guid: f6e6c643f841d984eb73cd757fe22f17, type: 3}
   spell: {fileID: 2721552305604762130, guid: 59656a3b3b576e743b10e93e91d70759, type: 3}
+  enemies: []
 --- !u!1 &2423179884662023189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1377,7 @@ GameObject:
   - component: {fileID: 2423179885716301784}
   - component: {fileID: 2423179885716301607}
   - component: {fileID: 930976296}
+  - component: {fileID: 494174885}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: Untagged
@@ -1390,13 +1392,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2423179885716301606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.519024, z: -0, w: 0.8547597}
+  m_LocalPosition: {x: 389.80554, y: 24.637802, z: 383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2423179883925938913}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 62.534, z: 0}
 --- !u!20 &2423179885716301784
 Camera:
   m_ObjectHideFlags: 0
@@ -1480,6 +1482,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &494174885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423179885716301606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd66a186e458a174a99767fed25ab69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 10
+  period: 5
 --- !u!1 &3965599610839468674
 GameObject:
   m_ObjectHideFlags: 0

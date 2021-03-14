@@ -301,9 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9338587ed51f8d4fb67363f83b9cac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingSpeed: 0.18
-  bobbingAmount: 0.2
-  midpoint: 2
+  MinHigh: 1.8
+  MaxHigh: 1.9
+  bobbingSpeed: 0.16
+  bobbingAmount: 0.08
+  midpoint: 1.85
 --- !u!1 &4530392440245781793
 GameObject:
   m_ObjectHideFlags: 0
