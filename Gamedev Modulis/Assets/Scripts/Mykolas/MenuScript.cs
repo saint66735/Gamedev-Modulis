@@ -15,6 +15,7 @@ public class MenuScript : MonoBehaviour
     public List<GameObject> enemies;
     int i=0;
 
+    public GameObject rechargeSlider;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))

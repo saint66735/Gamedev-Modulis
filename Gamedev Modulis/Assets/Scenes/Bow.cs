@@ -7,27 +7,30 @@ public class Bow : BaseWeapon
     public GameObject arrow;
     float chargeTime = 2;
     float currentCharge = 0;
-    IEnumerator charge;
     float cameraFOV;
     public override void Attack()
     {
-        charge = ChargeAttack();
-        StartCoroutine(charge);
-        if (currentCharge > 0.3f)
-        {
-            GameObject instance;
-            instance = Instantiate(arrow, transform.position, Quaternion.identity);
-            instance.transform.rotation = Quaternion.LookRotation(transform.up);
-            instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge, transform.parent.tag, 100);
-            instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 500 * currentCharge);
-        }
+        StartCoroutine(ChargeAttack(
+            () =>
+            {
+                Debug.Log("No crash?");
+                if (currentCharge > 0.3)
+                {
+                    GameObject instance;
+                    instance = Instantiate(arrow, transform.position, Quaternion.identity);
+                    instance.transform.rotation = Quaternion.LookRotation(transform.up);
+                    instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge, transform.parent.tag, 100);
+                    instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 500 * currentCharge);
+                }
 
-        attacked = true;
-        Debug.Log("charging " + currentCharge);
-        currentCharge = 0;
-        Camera.main.fieldOfView = cameraFOV;
+                attacked = true;
+                Debug.Log("charging " + currentCharge);
+                currentCharge = 0;
+                Camera.main.fieldOfView = cameraFOV;
+            }));
+
     }
-    IEnumerator ChargeAttack()
+    IEnumerator ChargeAttack(System.Action onFinish)
     {
         while (Input.GetKey(KeyCode.Mouse0))
         {
@@ -36,11 +39,12 @@ public class Bow : BaseWeapon
                 currentCharge += Time.deltaTime;
                 Camera.main.fieldOfView -= Time.deltaTime * 3;
             }
-            yield return currentCharge;
+            yield return null;
 
+            /*if (Input.GetMouseButtonUp(0))
+                yield return currentCharge;*/
         }
-        
-
+        onFinish();
     }
 
     public override void Setup()

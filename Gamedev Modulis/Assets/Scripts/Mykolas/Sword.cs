@@ -14,7 +14,7 @@ public class Sword : BaseWeapon
 
     public override void Setup()
     {
-        gameObject.GetComponent<ArrowKill>().Setup(damage, transform.parent.tag);
+        //gameObject.GetComponent<ArrowKill>().Setup(damage, transform.parent.tag);
         swordAnim = GetComponent<Animator>();
         swordAnim.speed = 1.5f;
         attacker = transform.parent.tag;
