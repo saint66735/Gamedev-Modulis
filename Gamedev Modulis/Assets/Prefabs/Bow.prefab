@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcddc4b0169ad744ab863e14ca03a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 33
   attacked: 0
   attackDelay: 1
-  arrow: {fileID: 4545168450731170888, guid: 04e1b7329269cda4ea7e79a70b0d60c0, type: 3}
+  attacker: 
+  arrow: {fileID: 579211853673610852, guid: f34fc64dca714b949ae017a1d8a5aff3, type: 3}

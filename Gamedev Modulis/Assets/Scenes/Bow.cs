@@ -17,10 +17,10 @@ public class Bow : BaseWeapon
                 if (currentCharge > 0.3)
                 {
                     GameObject instance;
-                    instance = Instantiate(arrow, transform.position, Quaternion.identity);
-                    instance.transform.rotation = Quaternion.LookRotation(transform.up);
-                    instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge, transform.parent.tag, 100);
-                    instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 500 * currentCharge);
+                    instance = Instantiate(arrow, transform.position, transform.rotation /*Quaternion.identity*/);
+                    //instance.transform.rotation = Quaternion.LookRotation(transform.up);
+                    instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge / 2, transform.parent.tag, 100);
+                    instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 1000 * currentCharge);
                 }
 
                 attacked = true;
@@ -36,8 +36,8 @@ public class Bow : BaseWeapon
         {
             if (currentCharge < chargeTime)
             {
-                currentCharge += Time.deltaTime;
-                Camera.main.fieldOfView -= Time.deltaTime * 3;
+                currentCharge += Time.deltaTime * 2;
+                Camera.main.fieldOfView -= Time.deltaTime * 5;
             }
             yield return null;
 
