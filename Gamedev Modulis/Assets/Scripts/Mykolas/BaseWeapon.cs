@@ -7,6 +7,7 @@ public class BaseWeapon : MonoBehaviour
 {
     public float damage;
     public bool attacked = false;
+    public bool attacking = false;
     public float attackDelay = 1;
     public string attacker;
 
@@ -24,6 +25,10 @@ public class BaseWeapon : MonoBehaviour
     }
 
     virtual public void Attack()
+    {
+        throw new NotImplementedException();
+    }
+    virtual public void SecondaryAction()
     {
         throw new NotImplementedException();
     }

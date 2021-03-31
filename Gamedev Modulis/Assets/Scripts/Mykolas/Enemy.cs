@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : BaseEntity
 {
-    Rigidbody rb;
     [SerializeField]
     int xpValue = 10;
     Player player;

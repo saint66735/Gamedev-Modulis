@@ -10,6 +10,7 @@ public class Bow : BaseWeapon
     float cameraFOV;
     public override void Attack()
     {
+        attacking = true;
         StartCoroutine(ChargeAttack(
             () =>
             {
@@ -27,6 +28,8 @@ public class Bow : BaseWeapon
                 Debug.Log("charging " + currentCharge);
                 currentCharge = 0;
                 Camera.main.fieldOfView = cameraFOV;
+                attacking = false;
+
             }));
 
     }

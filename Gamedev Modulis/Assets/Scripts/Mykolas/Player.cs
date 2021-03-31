@@ -25,11 +25,11 @@ public class Player : BaseEntity
         slider = sliderObj.GetComponent<Slider>();
         health = 100;
         GetWeapon();
-        
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
-        if (weapon.attacked)
+        if (weapon.attacked && !weapon.attacking)
         {
             currentDelay += Time.deltaTime;
             slider.value = currentDelay;
@@ -40,11 +40,13 @@ public class Player : BaseEntity
                 sliderObj.SetActive(false);
             }
         }
-        if (Input.GetKey(KeyCode.Mouse0) && !weapon.attacked)
+        if (Input.GetKey(KeyCode.Mouse0) && !weapon.attacked && !weapon.attacking)
         {
+            weapon.attacking = true;
             weapon.Attack();
             weapon.attacked = true;
-            RechargeSlider();
+            if (!weapon.attacking)
+                RechargeSlider();
         }
         if (xp >= xpReq)
             LevelUp();
@@ -69,5 +71,9 @@ public class Player : BaseEntity
         sliderObj.SetActive(true);
         slider.maxValue = weapon.attackDelay;
         slider.minValue = 0;
+    }
+    public override void Die()
+    {
+        Debug.Log("i has dieded");
     }
 }

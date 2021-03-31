@@ -8,15 +8,17 @@ public class Sword : BaseWeapon
 
     public override void Attack()
     {
+        attacking = true;
         attacked = true;
         swordAnim.SetTrigger("Base_Attack");
+        attacking = false;
     }
 
     public override void Setup()
     {
         //gameObject.GetComponent<ArrowKill>().Setup(damage, transform.parent.tag);
         swordAnim = GetComponent<Animator>();
-        swordAnim.speed = 2f;
+        swordAnim.speed = 3f;
         attacker = transform.parent.tag;
     }
 

@@ -6,13 +6,15 @@ public class PlayerMovement01 : MonoBehaviour
 {
     public CharacterController controller;
     public float speed;
-    public float gravity = -9.81f*2;
+    public float gravity = -9.81f * 2;
 
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    [SerializeField]
+    Rigidbody rb;
 
     bool isGrounded;
     Vector3 velocity;
@@ -22,6 +24,7 @@ public class PlayerMovement01 : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         if (controller == null)
             Debug.Log("No character controller");
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -30,7 +33,6 @@ public class PlayerMovement01 : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (controller.isGrounded || isGrounded && velocity.y < 0)
         {
-
             velocity.y = -2f;
         }
         float xAxis = Input.GetAxis("Horizontal");
@@ -60,7 +62,7 @@ public class PlayerMovement01 : MonoBehaviour
 
 
         velocity.y += gravity * Time.deltaTime;
-
+        rb.velocity = new Vector3(0, velocity.y, 0);
         controller.Move(velocity * Time.deltaTime);
     }
 }

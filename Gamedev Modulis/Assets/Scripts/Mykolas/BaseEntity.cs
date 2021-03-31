@@ -6,10 +6,12 @@ public class BaseEntity : MonoBehaviour
 {
     public float health;
     public bool alive = true;
+    public Rigidbody rb;
 
     virtual public void TakeDamage(float damage)
     {
         health -= damage;
+        //Debug.Log(damage);
     }
     virtual public void Attack()
     {
@@ -39,9 +41,19 @@ public class BaseEntity : MonoBehaviour
                 Die();
             }
         }
-        if(collision.collider.CompareTag("Ground"))
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground") && rb.velocity.y < -12)
         {
-
-        }
+            Debug.Log(rb.velocity.y);
+            TakeDamage(rb.velocity.y * 2 * (-1));
+            if (health <= 0 && alive)
+            {
+                Die();
+            }
+            Debug.Log("test");
+        }        
     }
 }
