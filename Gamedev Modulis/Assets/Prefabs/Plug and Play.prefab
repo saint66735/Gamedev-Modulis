@@ -856,7 +856,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  rechargeSlider: {fileID: 0}
+  rechargeSlider: {fileID: 6964463677572130949}
 --- !u!1 &2423179884662023189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,13 +1400,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2423179885716301606}
-  m_LocalRotation: {x: -0, y: 0.519024, z: -0, w: 0.8547597}
-  m_LocalPosition: {x: 389.80554, y: 24.637802, z: 383}
+  m_LocalRotation: {x: 0.027390912, y: -0.80026776, z: 0.07989168, w: 0.5936654}
+  m_LocalPosition: {x: 0, y: 3.2999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2423179883925938913}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 62.534, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.23, y: -106.622, z: 2.963}
 --- !u!20 &2423179885716301784
 Camera:
   m_ObjectHideFlags: 0
