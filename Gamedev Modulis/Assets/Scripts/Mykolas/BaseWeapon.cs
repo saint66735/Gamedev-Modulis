@@ -32,4 +32,8 @@ public class BaseWeapon : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+    virtual public void IncreaseDamage(float increase)
+    {
+        damage += increase;
+    }
 }

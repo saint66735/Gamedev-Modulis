@@ -12,6 +12,7 @@ public class MenuScript : MonoBehaviour
     public GameObject sword;
     public GameObject bow;
     public GameObject spell;
+    public GameObject lvlupText;
     public List<GameObject> enemies;
     int i=0;
 

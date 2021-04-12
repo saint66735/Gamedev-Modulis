@@ -25,7 +25,8 @@ public class Enemy : BaseEntity
     void Setup()
     {
         player = (Player)FindObjectOfType(typeof(Player));
-        health = 100 * player.level * 0.7f;
+        maxHealth = 100 * player.level * 0.7f;
+        health = maxHealth;
         rb = gameObject.GetComponent<Rigidbody>();
         xpValue = (int)player.level * 10;        
         playerLocated = true;

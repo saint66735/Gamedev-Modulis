@@ -5,6 +5,7 @@ using UnityEngine;
 public class BaseEntity : MonoBehaviour
 {
     public float health;
+    public float maxHealth;
     public bool alive = true;
     public Rigidbody rb;
 

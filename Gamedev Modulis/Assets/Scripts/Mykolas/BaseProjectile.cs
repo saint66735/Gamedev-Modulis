@@ -12,13 +12,6 @@ public class BaseProjectile : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public virtual void Setup(float damage, string shooter, float lifetime)
     {
         this.damage = damage;

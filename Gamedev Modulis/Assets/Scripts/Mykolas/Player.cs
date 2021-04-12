@@ -16,14 +16,18 @@ public class Player : BaseEntity
     float currentDelay = 0;
     Slider slider;
     GameObject sliderObj;
+    GameObject lvlupOBJ;
     MenuScript script;
+    public Text lvlup;
+    bool canLevelUp=false;
     // Start is called before the first frame update
     void Start()
     {
         script = GameObject.FindObjectOfType<MenuScript>();
         sliderObj = script.rechargeSlider;
+        lvlupOBJ = script.lvlupText;
         slider = sliderObj.GetComponent<Slider>();
-        health = 100;
+        maxHealth = 100;
         GetWeapon();
         rb = GetComponent<Rigidbody>();
     }
@@ -49,6 +53,12 @@ public class Player : BaseEntity
                 RechargeSlider();
         }
         if (xp >= xpReq)
+        {
+            xpReq += xpReq * 2;
+            canLevelUp = true;
+            lvlupOBJ.SetActive(true);
+        }
+        if(canLevelUp&&Input.GetKeyDown(KeyCode.I))
             LevelUp();
     }
 
@@ -58,13 +68,28 @@ public class Player : BaseEntity
     }
     void LevelUp()
     {
-        xpReq += xpReq * 2;
         level++;
+        lvlupOBJ.SetActive(false);
         Debug.Log("lEVEL UP. New xp req is " + xpReq);
     }
     public void IncreaseXp(int xpValue)
     {
         xp += xpValue;
+    }
+    void IncreaseStats(int op)
+    {
+        switch (op)
+        {
+            case 1:
+                maxHealth += 20;
+                break;
+            case 2:
+                Debug.Log("STR");
+                break;
+            case 3:
+                Debug.Log("STA");
+                break;
+        }
     }
     void RechargeSlider()
     {
