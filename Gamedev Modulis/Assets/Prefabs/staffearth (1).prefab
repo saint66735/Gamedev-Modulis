@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1766527715283864591}
   - component: {fileID: 7229254059561815988}
   - component: {fileID: 4036057895559240768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70003304607257508}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 4.098656, z: 0}
+  m_LocalPosition: {x: -0, y: 0.99, z: 0}
   m_LocalScale: {x: 0.61, y: 0.62, z: 0.61}
   m_Children: []
   m_Father: {fileID: 4577992827010003245}
@@ -94,7 +94,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.41591433, b: 0, a: 1}
-  m_Intensity: 5.41
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -154,7 +154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4577992827010003245}
   - component: {fileID: 4036057896390512226}
-  m_Layer: 0
+  - component: {fileID: 32719322}
+  m_Layer: 8
   m_Name: staffearth (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,15 +169,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802054670244375447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 816.234, y: 151.667, z: 499.7151}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalRotation: {x: 0.080254346, y: -0, z: -0, w: 0.9967744}
+  m_LocalPosition: {x: 0, y: -0.003729701, z: 0.04794371}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 47701128742342507}
   - {fileID: 7680275182268568631}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.206, y: 0, z: 0}
 --- !u!95 &4036057896390512226
 Animator:
   serializedVersion: 3
@@ -196,6 +197,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &32719322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3802054670244375447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbc0f07f4aabaf3488711c9a2f4c24b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  attacked: 0
+  attacking: 0
+  attackDelay: 1
+  attacker: 
+  spell: {fileID: 6684427229704089533, guid: 774ba2f1b1c6a8b41947c9deb2d8987a, type: 3}
 --- !u!1 &4671506885686171350
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +226,7 @@ GameObject:
   - component: {fileID: 47701128742342507}
   - component: {fileID: 1532064070268054854}
   - component: {fileID: 6033296951028806871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4671506885686171350}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 2.7010157, z: -0.0110657215}
+  m_LocalPosition: {x: -0, y: -0.35, z: -0.0110657215}
   m_LocalScale: {x: 0.050000012, y: 0.050000012, z: 1.1500001}
   m_Children: []
   m_Father: {fileID: 4577992827010003245}

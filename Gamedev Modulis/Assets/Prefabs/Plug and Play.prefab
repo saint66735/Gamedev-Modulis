@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 618446973}
   - component: {fileID: 618446972}
   m_Layer: 5
-  m_Name: Text
+  m_Name: NPC TEXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +848,7 @@ MonoBehaviour:
   buttons: {fileID: 2423179884304329698}
   sword: {fileID: 7078003158077247034, guid: a0e4e58eefb108245ac42ee36a7a3691, type: 3}
   bow: {fileID: 6998826752763905963, guid: f6e6c643f841d984eb73cd757fe22f17, type: 3}
-  spell: {fileID: 2721552305604762130, guid: 59656a3b3b576e743b10e93e91d70759, type: 3}
+  spell: {fileID: 3802054670244375447, guid: 76cde543f28bc094d86f494f11243dc4, type: 3}
   enemies:
   - {fileID: 0}
   - {fileID: 0}
@@ -1502,8 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd66a186e458a174a99767fed25ab69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 10
-  period: 5
+  amplitude: 3
+  period: 3
 --- !u!1 &2891021852115038361
 GameObject:
   m_ObjectHideFlags: 0
