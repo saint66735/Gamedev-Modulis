@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1766527715283864591}
   - component: {fileID: 7229254059561815988}
   - component: {fileID: 4036057895559240768}
+  - component: {fileID: 7742961887140173735}
   m_Layer: 8
   m_Name: Icosphere
   m_TagString: Untagged
@@ -144,6 +145,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!95 &7742961887140173735
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70003304607257508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08840393de492cb468007f4c92b1278e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3802054670244375447
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802054670244375447}
-  m_LocalRotation: {x: 0.080254346, y: -0, z: -0, w: 0.9967744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.003729701, z: 0.04794371}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
@@ -177,7 +197,7 @@ Transform:
   - {fileID: 7680275182268568631}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.206, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4036057896390512226
 Animator:
   serializedVersion: 3
@@ -188,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 3802054670244375447}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 08840393de492cb468007f4c92b1278e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b195d66e8d1f114aa8a703caf1043f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
