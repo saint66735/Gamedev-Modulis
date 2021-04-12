@@ -12,8 +12,7 @@ public class BreathingEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
-        
+        startPos = transform.localPosition;        
     }
 
     // Update is called once per frame
@@ -22,6 +21,5 @@ public class BreathingEffect : MonoBehaviour
         float theta = Time.timeSinceLevelLoad / period;
         float distance = amplitude * Mathf.Sin(theta);
         transform.localPosition = startPos + Vector3.up * distance;
-
     }
 }

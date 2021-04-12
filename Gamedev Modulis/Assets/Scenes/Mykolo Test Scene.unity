@@ -373,11 +373,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4152500070788603788, guid: 2279911d42f26564e8c5011158893615, type: 3}
   m_PrefabInstance: {fileID: 527063455}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &527063457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 527063455}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &580767584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -442,11 +437,6 @@ PrefabInstance:
 --- !u!4 &580767585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4152500070788603788, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 580767584}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &580767586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
   m_PrefabInstance: {fileID: 580767584}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &618446972 stripped
@@ -525,16 +515,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4152500070788603788, guid: 2279911d42f26564e8c5011158893615, type: 3}
   m_PrefabInstance: {fileID: 924469587}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &924469589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 924469587}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &929965904 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 1214812522}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &929965910 stripped
 Transform:
@@ -808,11 +788,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b670fc3d4ef7204b901d60e4e99ccc1, type: 3}
---- !u!1 &1539912344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 4152500071840584430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1539912350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4152500070788603788, guid: 2279911d42f26564e8c5011158893615, type: 3}
@@ -1112,11 +1087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2003071666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4152500070788603824, guid: 2279911d42f26564e8c5011158893615, type: 3}
-  m_PrefabInstance: {fileID: 518536241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2003071672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4152500070788603788, guid: 2279911d42f26564e8c5011158893615, type: 3}
@@ -1238,30 +1208,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 1539912344}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[1]
-      value: 
-      objectReference: {fileID: 929965904}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[2]
-      value: 
-      objectReference: {fileID: 2003071666}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[3]
-      value: 
-      objectReference: {fileID: 924469589}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[4]
-      value: 
-      objectReference: {fileID: 527063457}
-    - target: {fileID: 2423179884615692627, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: enemies.Array.data[5]
-      value: 
-      objectReference: {fileID: 580767586}
     - target: {fileID: 3508661745122634440, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
