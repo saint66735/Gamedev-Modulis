@@ -9,6 +9,7 @@ public class Enemy : BaseEntity
     Player player;
     [SerializeField]
     bool playerLocated = false;
+    public List<Rigidbody> rigidbodies;
     void Start()
     {
         //Setup();
@@ -39,5 +40,7 @@ public class Enemy : BaseEntity
         ScoreCounter.scoreValue++;
         player.IncreaseXp(xpValue);
         alive = false;
+        foreach (Rigidbody rbi in rigidbodies)
+            rbi.isKinematic = false;
     }
 }
