@@ -17,15 +17,19 @@ public class Player : BaseEntity
     Slider slider;
     GameObject sliderObj;
     GameObject lvlupOBJ;
+    GameObject lvlUpMenu;
     MenuScript script;
     public Text lvlup;
-    bool canLevelUp=false;
+    bool canLevelUp = false;
+    public D_Controller looking;
     // Start is called before the first frame update
     void Start()
     {
+        looking = GetComponentInChildren<D_Controller>();
         script = GameObject.FindObjectOfType<MenuScript>();
         sliderObj = script.rechargeSlider;
         lvlupOBJ = script.lvlupText;
+        lvlUpMenu = script.LvlUpPopUp;
         slider = sliderObj.GetComponent<Slider>();
         maxHealth = 100;
         GetWeapon();
@@ -44,9 +48,9 @@ public class Player : BaseEntity
                 sliderObj.SetActive(false);
             }
         }
-        if (Input.GetKey(KeyCode.Mouse0) && !weapon.attacked && !weapon.attacking)
+        if (Input.GetKey(KeyCode.Mouse0) && !weapon.attacked /*&& !weapon.attacking*/)
         {
-            weapon.attacking = true;
+            //weapon.attacking = true;
             weapon.Attack();
             weapon.attacked = true;
             if (!weapon.attacking)
@@ -58,7 +62,7 @@ public class Player : BaseEntity
             canLevelUp = true;
             lvlupOBJ.SetActive(true);
         }
-        if(canLevelUp&&Input.GetKeyDown(KeyCode.I))
+        if (canLevelUp && Input.GetKeyDown(KeyCode.I))
             LevelUp();
     }
 
@@ -70,27 +74,28 @@ public class Player : BaseEntity
     {
         level++;
         lvlupOBJ.SetActive(false);
+        lvlUpMenu.SetActive(true);
+        looking.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
         Debug.Log("lEVEL UP. New xp req is " + xpReq);
     }
     public void IncreaseXp(int xpValue)
     {
         xp += xpValue;
     }
-    void IncreaseStats(int op)
+    public void IncreaseDMG()
     {
-        switch (op)
-        {
-            case 1:
-                maxHealth += 20;
-                break;
-            case 2:
-                Debug.Log("STR");
-                break;
-            case 3:
-                Debug.Log("STA");
-                break;
-        }
+        weapon.IncreaseDamage(level * 10 + 10);
     }
+    public void IncreaseHP()
+    {
+        maxHealth += 20;
+    }
+    public void AtkSpeed()
+    {
+        weapon.attackDelay -= .2f;
+    }
+    
     void RechargeSlider()
     {
         sliderObj.SetActive(true);

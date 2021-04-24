@@ -841,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69d06be7017de5240984d8610d6b51b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4391356
+      value: -9.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69d06be7017de5240984d8610d6b51b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1162,10 +1162,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1280700311, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2423179883925938912, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
       propertyPath: m_Name
       value: Plug and Play

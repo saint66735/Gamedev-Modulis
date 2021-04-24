@@ -235,6 +235,7 @@ MonoBehaviour:
   attackDelay: 1
   attacker: 
   spell: {fileID: 6684427229704089533, guid: 774ba2f1b1c6a8b41947c9deb2d8987a, type: 3}
+  attackPoint: {fileID: 7680275182268568631}
 --- !u!1 &4671506885686171350
 GameObject:
   m_ObjectHideFlags: 0

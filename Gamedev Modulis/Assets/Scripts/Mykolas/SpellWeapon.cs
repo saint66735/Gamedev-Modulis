@@ -6,18 +6,18 @@ public class SpellWeapon : BaseWeapon
 {
     public GameObject spell;
     Animator ani;
+    public Transform attackPoint;
 
     public override void Attack()
     {
-        StartCoroutine("Timer");
-        ani.SetTrigger("Basic_Attack");
-        
-    }
-    private void AttackLogic() 
-    {
         attacking = true;
+        ani.SetTrigger("Basic_Attack");
+        StartCoroutine("Timer");
+    }
+    private void AttackLogic()
+    {        
         GameObject instance;
-        instance = Instantiate(spell, transform.position, Quaternion.identity);
+        instance = Instantiate(spell, attackPoint.position, /*Quaternion.identity*/Quaternion.Euler(Vector3.up + Vector3.forward));
         instance.GetComponent<BaseProjectile>().Setup(damage, transform.tag, 4);
         instance.transform.rotation = Quaternion.LookRotation(transform.up);
         instance.GetComponent<Rigidbody>().AddForce(transform.forward * 3000);
@@ -29,7 +29,7 @@ public class SpellWeapon : BaseWeapon
     public override void Setup()
     {
         ani = GetComponent<Animator>();
-        
+
         base.Setup();
     }
 
