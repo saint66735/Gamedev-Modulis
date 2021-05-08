@@ -5,12 +5,14 @@ using UnityEngine;
 public class Sword : BaseWeapon
 {
     Animator swordAnim;
+    public AudioSource audio;
 
     public override void Attack()
     {
         attacking = true;
         attacked = true;
-        swordAnim.SetTrigger("Base_Attack");
+        swordAnim.SetTrigger("Base_Attack"); 
+        audio.Play();
         attacking = false;
     }
 
@@ -21,5 +23,9 @@ public class Sword : BaseWeapon
         swordAnim.speed = 3f;
         attacker = transform.parent.tag;
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag(attacker))
+            { return; }
+    }
 }
