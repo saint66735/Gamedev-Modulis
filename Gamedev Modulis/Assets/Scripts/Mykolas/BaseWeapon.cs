@@ -36,4 +36,8 @@ public class BaseWeapon : MonoBehaviour
     {
         damage += increase;
     }
+    virtual public void DecreaseAttackDelay()
+    {
+        attackDelay -= attackDelay / 20;
+    }
 }

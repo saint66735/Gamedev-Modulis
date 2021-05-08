@@ -47,7 +47,7 @@ public class Bow : BaseWeapon
             /*if (Input.GetMouseButtonUp(0))
                 yield return currentCharge;*/
         }
-        onFinish();
+        onFinish?.Invoke();
     }
 
     public override void Setup()
@@ -55,6 +55,4 @@ public class Bow : BaseWeapon
         base.Setup();
         cameraFOV = Camera.main.fieldOfView;
     }
-
-
 }

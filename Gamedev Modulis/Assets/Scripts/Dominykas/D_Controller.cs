@@ -11,14 +11,21 @@ public class D_Controller : MonoBehaviour
     float xRotation = 0f;
     float mouseY;
     float mouseX;
+
+    public bool canLook;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        canLook = true;
     }
 
     void Update()
     {
-        //rotation
+        if (!canLook)
+        {
+            return;
+        }
         mouseX = Input.GetAxisRaw("Mouse X") * mouseSens * 4 * Time.deltaTime;
         mouseY = Input.GetAxisRaw("Mouse Y") * mouseSens * 4 * Time.deltaTime;
 

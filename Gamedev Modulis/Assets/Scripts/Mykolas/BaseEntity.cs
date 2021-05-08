@@ -46,15 +46,6 @@ public class BaseEntity : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ground") && rb.velocity.y < -12)
-        {
-            Debug.Log(rb.velocity.y);
-            TakeDamage(rb.velocity.y * 2 * (-1));
-            if (health <= 0 && alive)
-            {
-                Die();
-            }
-            Debug.Log("test");
-        }        
+             
     }
 }

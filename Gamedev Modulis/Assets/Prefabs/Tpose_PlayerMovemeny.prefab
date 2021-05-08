@@ -96,12 +96,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360d2376ffc6316429c92f6c4b0f46b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 40
+  maxHealth: 40
   alive: 1
   rb: {fileID: 4530392439726948502}
-  level: 1
+  level: 7
   xp: 0
+  xpReq: 10
   attackPoint: {fileID: 1609228486}
+  weapon: {fileID: 0}
+  lvlup: {fileID: 0}
+  looking: {fileID: 4109848198514998470}
+  playerMovementScript: {fileID: 1282233862594090625}
+  doingLVLUP: 0
 --- !u!143 &8038828703668629374
 CharacterController:
   m_ObjectHideFlags: 0
@@ -132,15 +139,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b2e4425cfc2e449b962225d485f945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 8038828703668629374}
   speed: 0
   gravity: -9.81
   jumpHeight: 3
   groundCheck: {fileID: 4530392440245781798}
-  groundDistance: 0.4
+  groundDistance: 0.1
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  rb: {fileID: 4530392439726948502}
+  canMove: 1
 --- !u!136 &773024201436241721
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -305,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 4131373807421564793}
+  canLook: 1
 --- !u!114 &5139664760101231424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,33 +11,50 @@ public class Player : BaseEntity
     public float level = 1;
     [SerializeField]
     int xp = 0;
-    float xpReq = 10;
+    public float xpReq = 10;
     public Transform attackPoint;
-    private BaseWeapon weapon;
+    public BaseWeapon weapon;
     float currentDelay = 0;
     Slider slider;
     GameObject sliderObj;
     GameObject lvlupOBJ;
     GameObject lvlUpMenu;
-    MenuScript script;
+    MenuScript menuScript;
     public Text lvlup;
     bool canLevelUp = false;
     public D_Controller looking;
-    // Start is called before the first frame update
+    public PlayerMovement01 playerMovementScript;
+    public bool doingLVLUP = false;
+
     void Start()
     {
-        looking = GetComponentInChildren<D_Controller>();
-        script = GameObject.FindObjectOfType<MenuScript>();
-        sliderObj = script.rechargeSlider;
-        lvlupOBJ = script.lvlupText;
-        lvlUpMenu = script.LvlUpPopUp;
+        playerMovementScript.onGroundHit.AddListener(yVelocity =>
+        {
+            Debug.Log($"Velocity {yVelocity}");
+            TakeDamage(Mathf.Abs(yVelocity * 2));
+            if (health <= 0 && alive)
+            {
+                Die();
+            }
+        });
+
+        rb = gameObject.GetComponent<Rigidbody>();
+        doingLVLUP = false;
+        menuScript = FindObjectOfType<MenuScript>();
+        sliderObj = menuScript.rechargeSlider;
+        lvlupOBJ = menuScript.lvlupText;
+        lvlUpMenu = menuScript.LvlUpPopUp;
         slider = sliderObj.GetComponent<Slider>();
         maxHealth = 100;
-        GetWeapon();
-        rb = GetComponent<Rigidbody>();
+        health = maxHealth;
     }
     void Update()
     {
+        if (doingLVLUP)
+        {
+            return;
+        }
+
         if (weapon.attacked && !weapon.attacking)
         {
             currentDelay += Time.deltaTime;
@@ -63,22 +81,11 @@ public class Player : BaseEntity
             lvlupOBJ.SetActive(true);
         }
         if (canLevelUp && Input.GetKeyDown(KeyCode.I))
-            LevelUp();
+        {
+            menuScript.LevelUp();
+        }
     }
 
-    void GetWeapon()
-    {
-        weapon = attackPoint.GetChild(0).GetComponent<BaseWeapon>();
-    }
-    void LevelUp()
-    {
-        level++;
-        lvlupOBJ.SetActive(false);
-        lvlUpMenu.SetActive(true);
-        looking.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Debug.Log("lEVEL UP. New xp req is " + xpReq);
-    }
     public void IncreaseXp(int xpValue)
     {
         xp += xpValue;
@@ -87,15 +94,18 @@ public class Player : BaseEntity
     {
         weapon.IncreaseDamage(level * 10 + 10);
     }
+
     public void IncreaseHP()
     {
         maxHealth += 20;
+        health = maxHealth;
     }
+
     public void AtkSpeed()
     {
-        weapon.attackDelay -= .2f;
+        weapon.DecreaseAttackDelay();
     }
-    
+
     void RechargeSlider()
     {
         sliderObj.SetActive(true);
