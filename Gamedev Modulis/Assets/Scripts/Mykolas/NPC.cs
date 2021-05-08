@@ -6,10 +6,18 @@ public class NPC : MonoBehaviour
 {
     public Text text;
     bool canInteract = false;
+
+    public DialogTrigger trigger;
+    DialogManager manager;
+    GameObject DialogueBox;
+    bool JauDisplay = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        manager = FindObjectOfType<DialogManager>();
+        DialogueBox = GameObject.Find("DialogBox");
+        DialogueBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,7 +26,17 @@ public class NPC : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canInteract)
         {
             Debug.Log("I'm talking!");
+
+            trigger.TriggerDialogue();
+            DialogueBox.SetActive(true);
+                if (JauDisplay)
+                {
+                    manager.DisplayNextSentence();
+                }
+            JauDisplay = true;
         }
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +53,10 @@ public class NPC : MonoBehaviour
         {
             text.enabled = false;
             canInteract = false;
+
+            DialogueBox.SetActive(false);
+            JauDisplay = false;
+
         }
     }
 }

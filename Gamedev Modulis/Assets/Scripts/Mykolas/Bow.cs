@@ -8,9 +8,13 @@ public class Bow : BaseWeapon
     float chargeTime = 2;
     float currentCharge = 0;
     float cameraFOV;
+    public AudioSource charge;
+    public AudioSource release;
     public override void Attack()
     {
         attacking = true;
+        charge.Play();
+
         StartCoroutine(ChargeAttack(
             () =>
             {
@@ -19,6 +23,7 @@ public class Bow : BaseWeapon
                 {
                     GameObject instance;
                     instance = Instantiate(arrow, transform.position, transform.rotation /*Quaternion.identity*/);
+                    release.Play();
                     //instance.transform.rotation = Quaternion.LookRotation(transform.up);
                     instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge / 2, transform.parent.tag, 100);
                     instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 1000 * currentCharge);
@@ -39,6 +44,7 @@ public class Bow : BaseWeapon
         {
             if (currentCharge < chargeTime)
             {
+
                 currentCharge += Time.deltaTime * 2;
                 Camera.main.fieldOfView -= Time.deltaTime * 5;
             }
