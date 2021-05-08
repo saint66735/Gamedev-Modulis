@@ -78,7 +78,7 @@ public class MenuScript : MonoBehaviour
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);
-        HealthBar.SetActive(true); 
+        //HealthBar.SetActive(true); 
         return instance;        
     }
 

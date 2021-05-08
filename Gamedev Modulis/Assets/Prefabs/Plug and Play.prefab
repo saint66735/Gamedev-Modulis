@@ -1634,7 +1634,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   LvlUpPopUp: {fileID: 657403629}
-  HealthBar: {fileID: 0}
+  HealthBar: {fileID: 6836070628811342286}
   rechargeSlider: {fileID: 6964463677572130949}
 --- !u!1 &2423179884662023189
 GameObject:
@@ -2944,6 +2944,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
+--- !u!1 &6836070628811342286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7107038050578127084, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
+  m_PrefabInstance: {fileID: 4359448667991365922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &10249768317704244 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
