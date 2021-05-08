@@ -12,16 +12,18 @@ public class BaseEntity : MonoBehaviour
     virtual public void TakeDamage(float damage)
     {
         health -= damage;
-        //Debug.Log(damage);
     }
+
     virtual public void Attack()
     {
 
     }
+
     virtual public void Die()
     {
 
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Projectile" && !CompareTag(collision.collider.GetComponent<BaseProjectile>().shooter))
@@ -42,10 +44,10 @@ public class BaseEntity : MonoBehaviour
                 Die();
             }
         }
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
-             
+
     }
 }
