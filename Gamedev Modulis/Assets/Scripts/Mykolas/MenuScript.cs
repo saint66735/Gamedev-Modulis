@@ -16,6 +16,8 @@ public class MenuScript : MonoBehaviour
     public GameObject lvlupText;
     public List<GameObject> enemies;
     public GameObject LvlUpPopUp;
+
+    public GameObject HealthBar;
     int i=0;
     Player playerScript;
     public GameObject rechargeSlider;
@@ -75,7 +77,8 @@ public class MenuScript : MonoBehaviour
 
         menuCamera.SetActive(false);
         buttons.SetActive(false);
-        sensitivity.SetActive(false); 
+        sensitivity.SetActive(false);
+        HealthBar.SetActive(true); 
         return instance;        
     }
 

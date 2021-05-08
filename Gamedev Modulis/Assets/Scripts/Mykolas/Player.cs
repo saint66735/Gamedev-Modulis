@@ -26,8 +26,18 @@ public class Player : BaseEntity
     public PlayerMovement01 playerMovementScript;
     public bool doingLVLUP = false;
 
+    // public int maximumHealth = 100;
+    // public int currentHealth;
+    public HealthBar healthBar;
+
+
+
+
     void Start()
     {
+        healthBar = FindObjectOfType<HealthBar>();
+        health = maxHealth;
+       
         playerMovementScript.onGroundHit.AddListener(yVelocity =>
         {
             Debug.Log($"Velocity {yVelocity}");
@@ -45,11 +55,15 @@ public class Player : BaseEntity
         lvlupOBJ = menuScript.lvlupText;
         lvlUpMenu = menuScript.LvlUpPopUp;
         slider = sliderObj.GetComponent<Slider>();
-        maxHealth = 100;
-        health = maxHealth;
+        
+        // maxHealth = 100;
+        // health = maxHealth;
     }
     void Update()
     {
+        healthBar.slider.maxValue = maxHealth;
+        healthBar.slider.value = health;
+        
         if (doingLVLUP)
         {
             return;
