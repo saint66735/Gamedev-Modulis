@@ -16,7 +16,6 @@ public class Sensitivity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        D_Controller.mouseSens = sensSlider.value;
         sensCount.text = "Sensitivity: " + sensSlider.value.ToString();
     }
 

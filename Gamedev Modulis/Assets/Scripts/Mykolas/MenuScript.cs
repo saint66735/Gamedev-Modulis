@@ -16,11 +16,13 @@ public class MenuScript : MonoBehaviour
     public GameObject lvlupText;
     public List<GameObject> enemies;
     public GameObject LvlUpPopUp;
+    public Slider sensitivitySlider;
 
     public GameObject HealthBar;
     int i=0;
     Player playerScript;
     public GameObject rechargeSlider;
+    public Text playerName;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -72,14 +74,17 @@ public class MenuScript : MonoBehaviour
 
     Player CreatePlayer()
     {
-        Player instance = Instantiate(player, spawnPoint).GetComponent<Player>();
+        Player tempPlayer;
+        GameObject instance = Instantiate(player, spawnPoint);
+        tempPlayer = instance.GetComponent<Player>();
         playerScript = instance.GetComponent<Player>();
-
+        tempPlayer.charName = playerName.text;
+        instance.GetComponentInChildren<D_Controller>().mouseSens = sensitivitySlider.value;
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);
         HealthBar.SetActive(true); 
-        return instance;        
+        return tempPlayer;        
     }
 
     internal void LevelUp()

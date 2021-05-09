@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Player : BaseEntity
 {
     BaseJob job;
-    public static string charName;
+    public string charName;
     public float level = 1;
     [SerializeField]
     int xp = 0;
