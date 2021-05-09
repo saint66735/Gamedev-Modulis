@@ -10,7 +10,7 @@ public class Player : BaseEntity
     public string charName;
     public float level = 1;
     [SerializeField]
-    int xp = 0;
+    public int xp = 0;
     public float xpReq = 10;
     public Transform attackPoint;
     public BaseWeapon weapon;

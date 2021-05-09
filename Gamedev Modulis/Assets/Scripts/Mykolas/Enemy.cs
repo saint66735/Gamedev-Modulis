@@ -37,7 +37,6 @@ public class Enemy : BaseEntity
     {
         rb.isKinematic = false;
         Debug.Log("I'm dead");
-        ScoreCounter.scoreValue++;
         player.IncreaseXp(xpValue);
         alive = false;
         foreach (Rigidbody rbi in rigidbodies)
