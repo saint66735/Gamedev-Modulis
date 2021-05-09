@@ -17,7 +17,6 @@ public class MenuScript : MonoBehaviour
     public List<GameObject> enemies;
     public GameObject LvlUpPopUp;
     public Slider sensitivitySlider;
-    public GameObject inGameUtils;
 
     public GameObject HealthBar;
     int i=0;
@@ -26,6 +25,8 @@ public class MenuScript : MonoBehaviour
     public Text playerName;
 
     public GameObject GameOverScreen;
+
+    public GameObject inGameUtils;
     private void Update()
     {
         if(!playerScript.alive)
@@ -46,6 +47,7 @@ public class MenuScript : MonoBehaviour
             playerScript.looking.canLook = false;
             playerScript.playerMovementScript.canMove = false;
             GameOverScreen.SetActive(true);
+            inGameUtils.SetActive(false);
             
 
         }
@@ -103,7 +105,7 @@ public class MenuScript : MonoBehaviour
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);
-        HealthBar.SetActive(true);
+        HealthBar.SetActive(true); 
         inGameUtils.SetActive(true);
         return tempPlayer;        
     }
