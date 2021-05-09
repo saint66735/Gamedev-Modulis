@@ -28,6 +28,5 @@ public class Arrow : BaseProjectile
         rb.isKinematic = true;        
         gameObject.GetComponent<Collider>().enabled = false;
         //Destroy(gameObject, lifetime);
-        Debug.Log("Im an arrow");
     }
 }

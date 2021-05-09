@@ -33,7 +33,6 @@ public class AudioManager : MonoBehaviour
         audio.clip = music;
         audio.Play();
         StartCoroutine(StartFade(audio, 1, 1));
-        //audio.volume = 1;
     }
     public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
     {

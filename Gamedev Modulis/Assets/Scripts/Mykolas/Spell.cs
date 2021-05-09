@@ -6,11 +6,6 @@ public class Spell : BaseProjectile
 {
     public GameObject hitExplosion;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,7 +24,5 @@ public class Spell : BaseProjectile
         GameObject instance = Instantiate(hitExplosion, pos, Quaternion.Euler(0, 0, 0));
         Destroy(instance, lifetime);
         Destroy(gameObject);
-        Debug.Log("MAGIC");
-
     }
 }

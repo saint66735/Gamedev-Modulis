@@ -40,7 +40,6 @@ public class BaseEntity : MonoBehaviour
         else if (collision.collider.tag == "Weapon" && !CompareTag(collision.collider.GetComponent<BaseWeapon>().attacker))
         {
             TakeDamage(collision.collider.GetComponent<BaseWeapon>().damage);
-            Debug.Log("sword oof");
             if (health <= 0 && alive)
             {
                 Die();

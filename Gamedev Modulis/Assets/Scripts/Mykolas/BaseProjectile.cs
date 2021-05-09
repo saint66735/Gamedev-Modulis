@@ -7,11 +7,6 @@ public class BaseProjectile : MonoBehaviour
     public float damage;
     public string shooter;
     public float lifetime;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
     public virtual void Setup(float damage, string shooter, float lifetime)
     {
         this.damage = damage;

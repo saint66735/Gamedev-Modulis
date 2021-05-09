@@ -59,14 +59,12 @@ public class MenuScript : MonoBehaviour
         Player instance = CreatePlayer();
         BaseWeapon wep = Instantiate(bow, instance.attackPoint).GetComponent<BaseWeapon>();
         instance.weapon = wep;
-        Debug.Log("I chose A");
     }
     public void SelectFighter()
     {
         Player instance = CreatePlayer();
         BaseWeapon wep = Instantiate(sword, instance.attackPoint).GetComponent<BaseWeapon>();
         instance.weapon = wep;
-        Debug.Log("I chose F");
     }
 
     public void SelectMage()
@@ -74,7 +72,6 @@ public class MenuScript : MonoBehaviour
         Player instance = CreatePlayer();
         BaseWeapon wep = Instantiate(spell, instance.attackPoint).GetComponent<BaseWeapon>();
         instance.weapon = wep;
-        Debug.Log("I chose M");
     }
 
     public void IncreaseDamage()

@@ -18,7 +18,6 @@ public class Bow : BaseWeapon
         StartCoroutine(ChargeAttack(
             () =>
             {
-                Debug.Log("No crash?");
                 if (currentCharge > 0.3)
                 {
                     GameObject instance;
@@ -30,7 +29,6 @@ public class Bow : BaseWeapon
                 }
 
                 attacked = true;
-                Debug.Log("charging " + currentCharge);
                 currentCharge = 0;
                 Camera.main.fieldOfView = cameraFOV;
                 attacking = false;
@@ -49,9 +47,6 @@ public class Bow : BaseWeapon
                 Camera.main.fieldOfView -= Time.deltaTime * 5;
             }
             yield return null;
-
-            /*if (Input.GetMouseButtonUp(0))
-                yield return currentCharge;*/
         }
         onFinish?.Invoke();
     }

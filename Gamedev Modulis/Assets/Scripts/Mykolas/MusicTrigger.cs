@@ -16,7 +16,10 @@ public class MusicTrigger : MonoBehaviour
     void Update()
     {
         if (!found && FindObjectOfType<AudioManager>() != null)
+        {
+            found = true;
             am = FindObjectOfType<AudioManager>();
+        }
 
     }
     private void OnTriggerEnter(Collider other)

@@ -26,8 +26,6 @@ public class Player : BaseEntity
     public PlayerMovement01 playerMovementScript;
     public bool doingLVLUP = false;
 
-    // public int maximumHealth = 100;
-    // public int currentHealth;
     public HealthBar healthBar;
 
     public Quest quest;
@@ -42,7 +40,6 @@ public class Player : BaseEntity
        
         playerMovementScript.onGroundHit.AddListener(yVelocity =>
         {
-            Debug.Log($"Velocity {yVelocity}");
             if(yVelocity>-20)
             { return; }
             TakeDamage(Mathf.Abs(yVelocity * 2));
@@ -60,8 +57,6 @@ public class Player : BaseEntity
         lvlUpMenu = menuScript.LvlUpPopUp;
         slider = sliderObj.GetComponent<Slider>();
         
-        // maxHealth = 100;
-        // health = maxHealth;
     }
     void Update()
     {
