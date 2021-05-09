@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     }
     public void ChangeMusic(AudioClip music)
     {
+        if (audio.clip == music)
+            return;
         StartCoroutine(StartFade(audio, 2, 0));
         //audio.clip = music;
         //audio.Play();

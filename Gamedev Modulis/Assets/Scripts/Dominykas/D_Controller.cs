@@ -6,7 +6,7 @@ using UnityEngine;
 public class D_Controller : MonoBehaviour
 {
     //rotation
-    public static float mouseSens = 40;
+    public float mouseSens = 40;
     public Transform playerBody;
     float xRotation = 0f;
     float mouseY;

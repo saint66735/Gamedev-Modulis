@@ -1231,26 +1231,6 @@ PrefabInstance:
       propertyPath: enemies.Array.data[5]
       value: 
       objectReference: {fileID: 1814708289}
-    - target: {fileID: 3508661745122634440, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3508661745122634440, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7606751266607732129, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7606751266607732129, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7606751266607732129, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d5dfbb3c616d74c9daadfc7ce58af3, type: 3}
 --- !u!1001 &3329295451239476746
