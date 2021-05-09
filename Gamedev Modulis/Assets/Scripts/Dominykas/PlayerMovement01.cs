@@ -24,6 +24,7 @@ public class BaseMovement : MonoBehaviour
     protected bool isGrounded;
     protected Vector3 velocity;
     public bool canMove;
+    public AudioSource audio;
 
     private void CheckIfIsGrounded()
     {
@@ -63,7 +64,15 @@ public class BaseMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector3(0, velocity.y, 0);
+        if (isGrounded && controller.velocity.magnitude > 0.5f && audio.isPlaying == false)
+        {
+            audio.volume = UnityEngine.Random.Range(0.8f, 1);
+            audio.pitch = UnityEngine.Random.Range(0.8f, 1.1f);
+            audio.Play(); 
+        }
+           
         controller.Move(velocity * Time.deltaTime);
+        
     }
 
     public virtual void HandleInput(out float xAxis, out float zAxis)
@@ -79,6 +88,7 @@ public class PlayerMovement01 : BaseMovement
     {
         xAxis = Input.GetAxis("Horizontal");
         zAxis = Input.GetAxis("Vertical");
+        
         if (Input.GetKey(KeyCode.W))
         {
 

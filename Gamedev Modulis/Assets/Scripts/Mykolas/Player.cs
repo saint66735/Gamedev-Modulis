@@ -41,6 +41,8 @@ public class Player : BaseEntity
         playerMovementScript.onGroundHit.AddListener(yVelocity =>
         {
             Debug.Log($"Velocity {yVelocity}");
+            if(yVelocity>-20)
+            { return; }
             TakeDamage(Mathf.Abs(yVelocity * 2));
             if (health <= 0 && alive)
             {
