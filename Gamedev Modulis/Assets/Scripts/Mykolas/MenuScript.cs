@@ -48,8 +48,8 @@ public class MenuScript : MonoBehaviour
             playerScript.playerMovementScript.canMove = false;
             GameOverScreen.SetActive(true);
             inGameUtils.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
             
-
         }
 
     }

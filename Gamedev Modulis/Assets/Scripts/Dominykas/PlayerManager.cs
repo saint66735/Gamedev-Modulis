@@ -26,13 +26,9 @@ public class PlayerManager : MonoBehaviour
             if(player != null)
             {
                 found = true;
-            }
-            
+            }            
         }
         else
-        found = false;
-        
-        
+        found = false;            
     }
-
 }
