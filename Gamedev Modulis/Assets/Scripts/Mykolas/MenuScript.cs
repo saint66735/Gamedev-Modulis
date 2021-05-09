@@ -23,13 +23,32 @@ public class MenuScript : MonoBehaviour
     Player playerScript;
     public GameObject rechargeSlider;
     public Text playerName;
+
+    public GameObject GameOverScreen;
     private void Update()
     {
+        if(!playerScript.alive)
+        {
+            GameOver();
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             enemies[i].SetActive(true);
             i++;
         }
+    }
+
+    public void GameOver()
+    {
+        if(!playerScript.alive)
+        {
+            playerScript.looking.canLook = false;
+            playerScript.playerMovementScript.canMove = false;
+            GameOverScreen.SetActive(true);
+            
+
+        }
+
     }
 
     public void SelectArcher()
