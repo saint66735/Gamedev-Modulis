@@ -17,20 +17,41 @@ public class MenuScript : MonoBehaviour
     public List<GameObject> enemies;
     public GameObject LvlUpPopUp;
     public Slider sensitivitySlider;
-    public GameObject inGameUtils;
 
     public GameObject HealthBar;
     int i=0;
     Player playerScript;
     public GameObject rechargeSlider;
     public Text playerName;
+
+    public GameObject GameOverScreen;
+
+    public GameObject inGameUtils;
     private void Update()
     {
+        if(!playerScript.alive)
+        {
+            GameOver();
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             enemies[i].SetActive(true);
             i++;
         }
+    }
+
+    public void GameOver()
+    {
+        if(!playerScript.alive)
+        {
+            playerScript.looking.canLook = false;
+            playerScript.playerMovementScript.canMove = false;
+            GameOverScreen.SetActive(true);
+            inGameUtils.SetActive(false);
+            
+
+        }
+
     }
 
     public void SelectArcher()
@@ -84,7 +105,7 @@ public class MenuScript : MonoBehaviour
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);
-        HealthBar.SetActive(true);
+        HealthBar.SetActive(true); 
         inGameUtils.SetActive(true);
         return tempPlayer;        
     }

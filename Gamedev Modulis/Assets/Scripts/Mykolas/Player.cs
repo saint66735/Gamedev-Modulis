@@ -131,5 +131,6 @@ public class Player : BaseEntity
     public override void Die()
     {
         Debug.Log("i has dieded");
+        alive = false;
     }
 }
