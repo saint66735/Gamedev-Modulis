@@ -10,6 +10,7 @@ public class Enemy : BaseEntity
     [SerializeField]
     bool playerLocated = false;
     public List<Rigidbody> rigidbodies;
+    public AudioSource deathSound;
     void Start()
     {
         //Setup();
@@ -39,6 +40,7 @@ public class Enemy : BaseEntity
         Debug.Log("I'm dead");
         player.IncreaseXp(xpValue);
         alive = false;
+        deathSound.Play();
         foreach (Rigidbody rbi in rigidbodies)
             rbi.isKinematic = false;
     }

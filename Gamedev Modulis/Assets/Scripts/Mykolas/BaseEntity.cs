@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class BaseEntity : MonoBehaviour
 {
     public float health;
     public float maxHealth;
     public bool alive = true;
     public Rigidbody rb;
+    public AudioSource damageSound;
 
     virtual public void TakeDamage(float damage)
     {
         health -= damage;
+        damageSound.Play();
     }
 
     virtual public void Attack()
