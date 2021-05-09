@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public Player player;
     Text score;
+    bool found=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,10 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: "+scoreValue;
+        if(!found&& (Player)FindObjectOfType(typeof(Player)) != null)
+        {
+            player = FindObjectOfType<Player>();
+        }
+        score.text = "xp " + player.xp + "/" + player.xpReq;
     }
 }
