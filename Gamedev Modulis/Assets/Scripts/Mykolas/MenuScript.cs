@@ -20,7 +20,7 @@ public class MenuScript : MonoBehaviour
 
     public GameObject HealthBar;
     int i=0;
-    Player playerScript;
+    public Player playerScript;
     public GameObject rechargeSlider;
     public Text playerName;
 

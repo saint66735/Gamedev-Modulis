@@ -10,7 +10,12 @@ public class NPC : MonoBehaviour
     public DialogTrigger trigger;
     DialogManager manager;
     GameObject DialogueBox;
-    bool JauDisplay = false;
+    bool JauDisplayDialogas = false;
+
+    public QuestGiver questGiver;
+    bool JauDisplayQuest = false;
+
+    bool playerLocated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +23,7 @@ public class NPC : MonoBehaviour
         manager = FindObjectOfType<DialogManager>();
         DialogueBox = GameObject.Find("DialogBox");
         DialogueBox.SetActive(false);
+        questGiver.CloseQuestWindow();
     }
 
     // Update is called once per frame
@@ -29,11 +35,38 @@ public class NPC : MonoBehaviour
 
             trigger.TriggerDialogue();
             DialogueBox.SetActive(true);
-                if (JauDisplay)
-                {
-                    manager.DisplayNextSentence();
-                }
-            JauDisplay = true;
+
+            if (JauDisplayDialogas)
+            {
+                manager.DisplayNextSentence();
+
+            }
+
+            JauDisplayDialogas = true;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Q) && canInteract)
+        {
+            if (JauDisplayQuest == false)
+            {
+                questGiver.OpenQuestWindow();
+                JauDisplayQuest = true;
+            }
+            else if (JauDisplayQuest == true)
+            {
+                questGiver.CloseQuestWindow();
+                JauDisplayQuest = false;
+            }
+        }
+
+        if (!playerLocated && (Player)FindObjectOfType(typeof(Player)) != null) {
+
+            if (Input.GetKeyDown(KeyCode.R) && canInteract)
+            {
+                questGiver.AcceptQuest();
+            }
+
         }
 
 
@@ -55,8 +88,9 @@ public class NPC : MonoBehaviour
             canInteract = false;
 
             DialogueBox.SetActive(false);
-            JauDisplay = false;
+            JauDisplayDialogas = false;
 
+            questGiver.CloseQuestWindow();
         }
     }
 }

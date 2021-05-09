@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-
+    public GameObject dialogScreen;
     public Text nameText;
     public Text DialogText;
 
@@ -44,25 +44,26 @@ public class DialogManager : MonoBehaviour
 
         }
 
-        string sentence = sentences.Dequeue();
+            string sentence = sentences.Dequeue();
 
-        //Debug.Log(sentence);
-        DialogText.text = sentence;
-        StopAllCoroutines();
-        StartCoroutine(TypeSystem(sentence));
+            //Debug.Log(sentence);
+            DialogText.text = sentence;
+            StopAllCoroutines();
+            StartCoroutine(TypeSystem(sentence));
 
-        //Radziu rodymas po viena;
-        IEnumerator TypeSystem(string sentence)
-        {
-            DialogText.text = "";
-            foreach (var raide in sentence.ToCharArray())
+            //Radziu rodymas po viena;
+            IEnumerator TypeSystem(string sentence)
             {
-                DialogText.text += raide;
-                yield return null;
+                DialogText.text = "";
+                foreach (var raide in sentence.ToCharArray())
+                {
+                    DialogText.text += raide;
+                    yield return null;
+                }
+
+
             }
         
-        
-        }
 
 
     }
@@ -70,5 +71,6 @@ public class DialogManager : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("End of convo");
+        dialogScreen.SetActive(false);
     }
 }

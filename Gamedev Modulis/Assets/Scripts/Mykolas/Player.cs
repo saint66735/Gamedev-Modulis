@@ -30,6 +30,8 @@ public class Player : BaseEntity
     // public int currentHealth;
     public HealthBar healthBar;
 
+    public Quest quest;
+
 
 
 
