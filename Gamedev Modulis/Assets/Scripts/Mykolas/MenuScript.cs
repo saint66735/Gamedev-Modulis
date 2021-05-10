@@ -19,7 +19,7 @@ public class MenuScript : MonoBehaviour
     public Slider sensitivitySlider;
 
     public GameObject HealthBar;
-    int i=0;
+    int i = 0;
     public Player playerScript;
     public GameObject rechargeSlider;
     public Text playerName;
@@ -28,10 +28,10 @@ public class MenuScript : MonoBehaviour
 
     public GameObject inGameUtils;
 
-    public float FOV;
+    public float FOV = 90f;
     private void Update()
     {
-        if(!playerScript.alive)
+        if (!playerScript.alive)
         {
             GameOver();
         }
@@ -44,14 +44,14 @@ public class MenuScript : MonoBehaviour
 
     public void GameOver()
     {
-        if(!playerScript.alive)
+        if (!playerScript.alive)
         {
             playerScript.looking.canLook = false;
             playerScript.playerMovementScript.canMove = false;
             GameOverScreen.SetActive(true);
             inGameUtils.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
-            
+
         }
 
     }
@@ -81,7 +81,7 @@ public class MenuScript : MonoBehaviour
         playerScript.IncreaseDMG();
         EndLevelUp();
     }
- 
+
     public void IncreaseHP()
     {
         playerScript.IncreaseHP();
@@ -101,13 +101,20 @@ public class MenuScript : MonoBehaviour
         playerScript = instance.GetComponent<Player>();
         tempPlayer.charName = playerName.text;
         instance.GetComponentInChildren<D_Controller>().mouseSens = sensitivitySlider.value;
-        instance.GetComponentInChildren<Camera>().fieldOfView = FOV;
+        if(FOV==0)
+        {
+            instance.GetComponentInChildren<Camera>().fieldOfView = 75;
+        }
+        else
+        {
+            instance.GetComponentInChildren<Camera>().fieldOfView = FOV;
+        }
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);
-        HealthBar.SetActive(true); 
+        HealthBar.SetActive(true);
         inGameUtils.SetActive(true);
-        return tempPlayer;        
+        return tempPlayer;
     }
 
     internal void LevelUp()
