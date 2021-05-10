@@ -19,7 +19,6 @@ public class HealthBar : MonoBehaviour
     }
     void Update() 
     {
-        Debug.Log($"My health is {slider.value}");
         
     }
 }

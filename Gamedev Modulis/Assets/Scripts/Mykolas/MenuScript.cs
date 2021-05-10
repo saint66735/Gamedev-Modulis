@@ -27,6 +27,8 @@ public class MenuScript : MonoBehaviour
     public GameObject GameOverScreen;
 
     public GameObject inGameUtils;
+
+    public float FOV;
     private void Update()
     {
         if(!playerScript.alive)
@@ -99,6 +101,7 @@ public class MenuScript : MonoBehaviour
         playerScript = instance.GetComponent<Player>();
         tempPlayer.charName = playerName.text;
         instance.GetComponentInChildren<D_Controller>().mouseSens = sensitivitySlider.value;
+        instance.GetComponentInChildren<Camera>().fieldOfView = FOV;
         menuCamera.SetActive(false);
         buttons.SetActive(false);
         sensitivity.SetActive(false);

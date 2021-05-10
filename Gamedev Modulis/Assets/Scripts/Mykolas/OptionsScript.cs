@@ -10,6 +10,7 @@ public class OptionsScript : MonoBehaviour
     public AudioMixer mixer;
     Resolution[] resolutions;
     public Dropdown res;
+    public MenuScript menuScript;
     private void Start()
     {
         resolutions = Screen.resolutions;
@@ -54,5 +55,9 @@ public class OptionsScript : MonoBehaviour
     {
         Resolution res = resolutions[index];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+    }
+    public void SelectFOV(float value)
+    {
+        menuScript.FOV = value;
     }
 }
