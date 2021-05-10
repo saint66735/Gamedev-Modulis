@@ -43,5 +43,7 @@ public class Enemy : BaseEntity
         deathSound.Play();
         foreach (Rigidbody rbi in rigidbodies)
             rbi.isKinematic = false;
+
+        QuestGiver.killCount++;
     }
 }

@@ -13,16 +13,21 @@ public class QuestGiver : MonoBehaviour
 
     public GameObject questWindow;
 
+    public GameObject enemys;
+
     public Text Pavadinimas;
     public Text Aprasymas;
     public Text ExpRewardas;
 
     bool found = false;
 
+    public static int killCount;
+
 
     private void Start()
     {
         //player = menuScript.playerScript;
+        killCount = 0;
     }
 
     private void Update()
@@ -34,6 +39,14 @@ public class QuestGiver : MonoBehaviour
             {
                 found = true;
             }
+        }
+
+        
+        if (killCount >= quest.reqToKill && (quest.isCompleted == false)) 
+        {
+
+            CompleteQuest();
+
         }
     }
 
@@ -52,7 +65,11 @@ public class QuestGiver : MonoBehaviour
 
         CloseQuestWindow();
         quest.isActive = true;
+        quest.isCompleted = false;
         player.quest = quest;
+
+        enemys.SetActive(true);
+
 
     
     }
@@ -60,5 +77,13 @@ public class QuestGiver : MonoBehaviour
     public void CloseQuestWindow()
     {
         questWindow.SetActive(false);
+    }
+
+    public void CompleteQuest()
+    {
+        quest.isCompleted = true;
+        quest.isActive = false;
+        player.IncreaseXp(quest.ExpRewardas);
+
     }
 }
