@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
 
     bool playerLocated = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +37,15 @@ public class NPC : MonoBehaviour
         {
             Debug.Log("I'm talking!");
 
-            trigger.TriggerDialogue();
-            DialogueBox.SetActive(true);
+            if (JauDisplayDialogas == false)
+            {
+                trigger.TriggerDialogue();
+                DialogueBox.SetActive(true);
+            }
 
             if (JauDisplayDialogas)
             {
+                Debug.Log("2nd time!");
                 manager.DisplayNextSentence();
 
             }

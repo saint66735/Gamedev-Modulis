@@ -51,21 +51,22 @@ public class DialogManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSystem(sentence));
 
-        //Radziu rodymas po viena;
-        IEnumerator TypeSystem(string sentence)
-        {
-            DialogText.text = "";
-            foreach (var raide in sentence.ToCharArray())
-            {
-                DialogText.text += raide;
-                yield return null;
-            }
-        }
     }
 
     public void EndDialogue()
     {
         Debug.Log("End of convo");
         dialogScreen.SetActive(false);
+    }
+
+    //Radziu rodymas po viena;
+    IEnumerator TypeSystem(string sentence)
+    {
+        DialogText.text = "";
+        foreach (var raide in sentence.ToCharArray())
+        {
+            DialogText.text += raide;
+            yield return null;
+        }
     }
 }
