@@ -7,12 +7,7 @@ public class MusicTrigger : MonoBehaviour
     AudioManager am;
     public AudioClip clip;
     bool found = false;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-    // Update is called once per frame
     void Update()
     {
         if (!found && FindObjectOfType<AudioManager>() != null)
@@ -24,7 +19,7 @@ public class MusicTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
             am.ChangeMusic(clip);
     }
 }

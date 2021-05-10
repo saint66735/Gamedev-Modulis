@@ -5,25 +5,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource audio;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void ChangeMusic(AudioClip music)
     {
         if (audio.clip == music)
             return;
         StartCoroutine(StartFade(audio, 2, 0));
-        //audio.clip = music;
-        //audio.Play();
-        //StartCoroutine(StartFade(audio, 0, 1));
         StartCoroutine(Wait2S(music));
 
     }

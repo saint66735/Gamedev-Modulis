@@ -20,15 +20,10 @@ public class PlayerManager : MonoBehaviour
 
     private void Update() 
     {
-        if(!found)
+        if(!found && GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            if(player != null)
-            {
-                found = true;
-            }            
-        }
-        else
-        found = false;            
+            found = true;            
+        }          
     }
 }
