@@ -60,6 +60,10 @@ public class Player : BaseEntity
     }
     void Update()
     {
+        if(health < 0 && alive)
+        {
+            alive = false;
+        }
         healthBar.slider.maxValue = maxHealth;
         healthBar.slider.value = health;
         

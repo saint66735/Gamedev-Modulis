@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     PlayerManager manager;
     bool playerLocated = false;
+
+    public Enemy enemy;
     Animator anima;
     // Start is called before the first frame update
     void Start()
@@ -19,32 +21,59 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 5;
         anima = GetComponentInChildren<Animator>();
+        
+    }
+
+    IEnumerator WaitingXD(float distance)
+    {
+        
+        yield return new WaitForSeconds(1);
+        if(distance <= attackRange)
+        {
+            manager.player.GetComponent<Player>().TakeDamage(0.1f);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(manager.player.transform.position, transform.position);
-        if(distance <= lookRadius)
+        if(!enemy.alive)
         {
-            anima.SetBool("PlayerDetected", true);
-            agent.SetDestination(manager.player.transform.position);
+            agent.enabled = false;
+            GetComponent<Collider>().enabled = false;
+            anima.Play("Death");
+            Destroy(gameObject, 10);
         }
         else
         {
-            anima.SetBool("PlayerDetected", false);
-        }
+            float distance = Vector3.Distance(manager.player.transform.position, transform.position);
+        
+            if(distance <= lookRadius)
+            {
+                anima.SetBool("PlayerDetected", true);
+                agent.SetDestination(manager.player.transform.position);
+            }
+            else
+            {
+                anima.SetBool("PlayerDetected", false);
+            }   
 
-        if(distance <= attackRange)
-        {
-            agent.speed = 0;
-            anima.SetBool("PlayerNear", true);                        
+            if(distance <= attackRange)
+            {
+                agent.speed = 0;
+                anima.SetBool("PlayerNear", true);  
+                StartCoroutine(WaitingXD(distance));                 
+            }
+            else
+            {
+                agent.speed = 5f;
+                anima.SetBool("PlayerNear", false);
+            }
         }
-        else
-        {
-            agent.speed = 5f;
-            anima.SetBool("PlayerNear", false);
-        }
+        
+
+        
                 
     }
 
