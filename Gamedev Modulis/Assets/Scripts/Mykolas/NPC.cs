@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
 
     public DialogTrigger trigger;
     DialogManager manager;
-    GameObject DialogueBox;
+    public GameObject DialogueBox;
     bool JauDisplayDialogas = false;
 
     public QuestGiver questGiver;
@@ -21,7 +21,10 @@ public class NPC : MonoBehaviour
     void Start()
     {
         manager = FindObjectOfType<DialogManager>();
-        DialogueBox = GameObject.Find("DialogBox");
+        //if (DialogueBox == null)
+        //{
+            //DialogueBox = GameObject.FindGameObjectWithTag("DialogBox");
+        //}
         DialogueBox.SetActive(false);
         questGiver.CloseQuestWindow();
     }
