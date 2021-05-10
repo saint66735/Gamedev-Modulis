@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLogic : MonoBehaviour
 {
+    [SerializeField]
+    string sceneName;
     // Start is called before the first frame update
     public void Restart()
     {
-        SceneManager.LoadScene("TestasTestas");
+        SceneManager.LoadScene(sceneName);
     }
 
     // Update is called once per frame

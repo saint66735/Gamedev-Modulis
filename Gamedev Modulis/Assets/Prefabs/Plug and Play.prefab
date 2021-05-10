@@ -4711,6 +4711,7 @@ GameObject:
   - component: {fileID: 2423179885716301607}
   - component: {fileID: 930976296}
   - component: {fileID: 494174885}
+  - component: {fileID: 2124235129}
   m_Layer: 0
   m_Name: MenuCamera
   m_TagString: Untagged
@@ -4829,6 +4830,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 3
   period: 3
+--- !u!82 &2124235129
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423179885716301606}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3277807826311702181, guid: 8a1042e35aa524947bea74195546345a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: a3e4d830ce7ff074a828369f946380d7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2802259704690442591
 GameObject:
   m_ObjectHideFlags: 0
@@ -7518,19 +7615,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2352935055340406159, guid: ec383de695025234bb20911f5caa68bc, type: 3}
       propertyPath: quest.Aprasymas
-      value: Help the "Dude" defeat the "Obsidians" (press 'R' to take the quest)
+      value: Help the "Dude" defeat the "Obsidians"
       objectReference: {fileID: 0}
     - target: {fileID: 2352935055340406159, guid: ec383de695025234bb20911f5caa68bc, type: 3}
       propertyPath: quest.reqToKill
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2352935055340406159, guid: ec383de695025234bb20911f5caa68bc, type: 3}
       propertyPath: quest.ExpRewardas
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2352935055340406159, guid: ec383de695025234bb20911f5caa68bc, type: 3}
       propertyPath: quest.Pavadinimas
       value: Big Help
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352935055563498177, guid: ec383de695025234bb20911f5caa68bc, type: 3}
+      propertyPath: m_Text
+      value: press 'R' to take the quest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec383de695025234bb20911f5caa68bc, type: 3}
@@ -7546,6 +7647,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2423179884615692626}
     m_Modifications:
+    - target: {fileID: 6230151429998999992, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_Text
+      value: '''E'' to continue'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151429998999992, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151429998999992, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151429998999992, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151430867240016, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: dialogScreen
+      value: 
+      objectReference: {fileID: 6230151431590962446}
+    - target: {fileID: 6230151430942122818, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151430942122818, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230151430942122818, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 192.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6230151431005589380, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -7596,6 +7729,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+--- !u!1 &6230151431590962446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6230151430291074126, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
+  m_PrefabInstance: {fileID: 1941621056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6230151431278560964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6230151431005589380, guid: 932bdb12d83fa4b4fb789f13ee70b531, type: 3}
