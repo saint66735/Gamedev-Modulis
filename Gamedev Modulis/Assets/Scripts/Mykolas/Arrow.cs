@@ -27,6 +27,6 @@ public class Arrow : BaseProjectile
         rb.collisionDetectionMode = CollisionDetectionMode.Discrete;
         rb.isKinematic = true;        
         gameObject.GetComponent<Collider>().enabled = false;
-        //Destroy(gameObject, lifetime);
+        Destroy(gameObject, lifetime);
     }
 }
