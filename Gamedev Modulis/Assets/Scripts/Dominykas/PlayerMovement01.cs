@@ -66,8 +66,16 @@ public class BaseMovement : MonoBehaviour
         rb.velocity = new Vector3(0, velocity.y, 0);
         if (isGrounded && controller.velocity.magnitude > 0.5f && audio.isPlaying == false)
         {
-            audio.volume = UnityEngine.Random.Range(0.8f, 1);
-            audio.pitch = UnityEngine.Random.Range(0.8f, 1.1f);
+            if(controller.velocity.magnitude > 12f)
+            {
+                audio.volume = UnityEngine.Random.Range(0.8f, 1);
+                audio.pitch = UnityEngine.Random.Range(1f, 1.5f);
+            }
+            else
+            {
+                audio.volume = UnityEngine.Random.Range(0.8f, 1);
+                audio.pitch = UnityEngine.Random.Range(0.8f, 1.1f);
+            }            
             audio.Play(); 
         }
            
