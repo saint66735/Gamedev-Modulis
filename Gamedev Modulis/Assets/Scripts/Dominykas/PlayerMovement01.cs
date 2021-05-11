@@ -96,7 +96,7 @@ public class PlayerMovement01 : BaseMovement
     {
         xAxis = Input.GetAxis("Horizontal");
         zAxis = Input.GetAxis("Vertical");
-        
+
         if (Input.GetKey(KeyCode.W))
         {
 
@@ -104,15 +104,20 @@ public class PlayerMovement01 : BaseMovement
             {
                 speed = 15f;
             }
+            else if (Input.GetKey(KeyCode.LeftAlt)) //Sneky
+            {
+                speed = 5f;
+            }
             else
             {
                 speed = 10f;
             }
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            }
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-        }
     }
 }
