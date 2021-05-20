@@ -64,12 +64,18 @@ public class BaseMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector3(0, velocity.y, 0);
+
         if (isGrounded && controller.velocity.magnitude > 0.5f && audio.isPlaying == false)
         {
             if(controller.velocity.magnitude > 12f)
             {
                 audio.volume = UnityEngine.Random.Range(0.8f, 1);
                 audio.pitch = UnityEngine.Random.Range(1f, 1.5f);
+            }
+            else if(controller.velocity.magnitude < 7f)
+            {
+                audio.volume = UnityEngine.Random.Range(0.3f, 0.3f);
+                audio.pitch = UnityEngine.Random.Range(0.8f, 0.6f);
             }
             else
             {
@@ -104,7 +110,7 @@ public class PlayerMovement01 : BaseMovement
             {
                 speed = 15f;
             }
-            else if (Input.GetKey(KeyCode.LeftAlt)) //Sneky
+            else if (Input.GetKey(KeyCode.LeftControl)) //Sneky
             {
                 speed = 5f;
             }
