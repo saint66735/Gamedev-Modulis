@@ -363,6 +363,13 @@ MonoBehaviour:
   playerMovementScript: {fileID: 6758012406612872174}
   doingLVLUP: 0
   healthBar: {fileID: 1803764653838622563, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
+  quest:
+    isActive: 0
+    isCompleted: 0
+    Pavadinimas: 
+    Aprasymas: 
+    ExpRewardas: 0
+    reqToKill: 0
 --- !u!143 &2561853849423049233
 CharacterController:
   m_ObjectHideFlags: 0
@@ -684,18 +691,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -3277807826311702181, guid: 8a1042e35aa524947bea74195546345a, type: 2}
     - target: {fileID: 956921523058341887, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
       propertyPath: m_RootOrder
       value: 0

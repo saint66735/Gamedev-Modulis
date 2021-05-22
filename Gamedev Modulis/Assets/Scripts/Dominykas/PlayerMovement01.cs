@@ -67,12 +67,12 @@ public class BaseMovement : MonoBehaviour
 
         if (isGrounded && controller.velocity.magnitude > 0.5f && audio.isPlaying == false)
         {
-            if(controller.velocity.magnitude > 12f)
+            if (controller.velocity.magnitude > 12f)
             {
                 audio.volume = UnityEngine.Random.Range(0.8f, 1);
                 audio.pitch = UnityEngine.Random.Range(1f, 1.5f);
             }
-            else if(controller.velocity.magnitude < 7f)
+            else if (controller.velocity.magnitude < 7f)
             {
                 audio.volume = UnityEngine.Random.Range(0.3f, 0.3f);
                 audio.pitch = UnityEngine.Random.Range(0.8f, 0.6f);
@@ -81,12 +81,12 @@ public class BaseMovement : MonoBehaviour
             {
                 audio.volume = UnityEngine.Random.Range(0.8f, 1);
                 audio.pitch = UnityEngine.Random.Range(0.8f, 1.1f);
-            }            
-            audio.Play(); 
+            }
+            audio.Play();
         }
-           
+
         controller.Move(velocity * Time.deltaTime);
-        
+
     }
 
     public virtual void HandleInput(out float xAxis, out float zAxis)
@@ -118,11 +118,10 @@ public class PlayerMovement01 : BaseMovement
             {
                 speed = 10f;
             }
-
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
-            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
 
     }

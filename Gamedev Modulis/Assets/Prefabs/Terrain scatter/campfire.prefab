@@ -228,7 +228,13 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 150
+        m_Name: Flame ammount
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Spark ammount
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -246,7 +252,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+        m_Name: FireImg
+        m_Overridden: 0
     m_Bool:
       m_Array: []
 --- !u!73398921 &9026802450113049218

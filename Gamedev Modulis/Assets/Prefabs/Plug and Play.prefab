@@ -4214,7 +4214,7 @@ MonoBehaviour:
   playerName: {fileID: 612480864}
   GameOverScreen: {fileID: 3202274851583963367}
   inGameUtils: {fileID: 8177246217801068888}
-  FOV: 0
+  FOV: 90
 --- !u!1 &2423179884662023189
 GameObject:
   m_ObjectHideFlags: 0
@@ -8350,15 +8350,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 738251281122820675, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 738251281122820675, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681488969094217968, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
-      propertyPath: m_Value
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_Pivot.x
@@ -8395,18 +8391,6 @@ PrefabInstance:
     - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_SizeDelta.y
       value: 8.5055
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.8852
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.8852
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.8852
       objectReference: {fileID: 0}
     - target: {fileID: 4349269338465206550, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8459,10 +8443,6 @@ PrefabInstance:
     - target: {fileID: 7107038050578127084, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
       propertyPath: m_Name
       value: HealthBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 7107038050578127084, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 423d6981f954c824ba6bc95f41242508, type: 3}
