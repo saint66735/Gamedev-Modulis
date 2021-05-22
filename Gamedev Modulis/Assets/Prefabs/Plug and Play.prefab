@@ -4196,7 +4196,7 @@ MonoBehaviour:
   sensitivity: {fileID: 284330676064247124}
   buttons: {fileID: 2423179884304329698}
   sword: {fileID: 7078003158077247034, guid: a0e4e58eefb108245ac42ee36a7a3691, type: 3}
-  bow: {fileID: 6998826752763905963, guid: f6e6c643f841d984eb73cd757fe22f17, type: 3}
+  bow: {fileID: 2974763659992219425, guid: 626a0c4f077797f4c8995df1520dddb6, type: 3}
   spell: {fileID: 8155263477229648081, guid: 13cf2606bb99fd641935d765385e5714, type: 3}
   lvlupText: {fileID: 2083155707818274194}
   enemies:
