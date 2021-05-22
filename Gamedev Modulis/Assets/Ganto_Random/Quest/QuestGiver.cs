@@ -12,6 +12,7 @@ public class QuestGiver : MonoBehaviour
     public MenuScript menuScript;
 
     public GameObject questWindow;
+    public GameObject questCompletedWindow;
 
     public GameObject enemys;
 
@@ -19,9 +20,16 @@ public class QuestGiver : MonoBehaviour
     public Text Aprasymas;
     public Text ExpRewardas;
 
+    public Text PavadinimasCompelted;
+    public Text ExpCompeltedRewardas;
+
     bool found = false;
 
+    public Animator QuestCompletedAnimator;
+
     public static int killCount;
+
+    int destroyTime  = 8;
 
 
     private void Start()
@@ -46,6 +54,7 @@ public class QuestGiver : MonoBehaviour
         {
 
             CompleteQuest();
+            CompleteShowQuest();
 
         }
     }
@@ -58,6 +67,9 @@ public class QuestGiver : MonoBehaviour
         Pavadinimas.text = quest.Pavadinimas;
         Aprasymas.text = quest.Aprasymas;
         ExpRewardas.text = quest.ExpRewardas.ToString();
+
+        PavadinimasCompelted.text = quest.Pavadinimas;
+        ExpCompeltedRewardas.text = quest.ExpRewardas.ToString();
     }
 
     public void AcceptQuest() 
@@ -88,4 +100,22 @@ public class QuestGiver : MonoBehaviour
         player.IncreaseXp(quest.ExpRewardas);
 
     }
+
+
+    public void CompleteShowQuest()
+    {
+
+
+        questCompletedWindow.SetActive(true);
+        QuestCompletedAnimator.SetTrigger("IsOpen");
+
+        //StartCoroutine(Coroutine());
+
+    }
+
+    //IEnumerator Coroutine()
+    //{
+    //    yield return new WaitForSeconds(8);
+    //    questCompletedWindow.SetActive(false);
+    //}
 }
