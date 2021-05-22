@@ -1101,18 +1101,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 956921523058341885, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -3277807826311702181, guid: 8a1042e35aa524947bea74195546345a, type: 2}
     - target: {fileID: 956921523058341887, guid: 11db7d23e01dfd840bae2e01bf9bffe8, type: 3}
       propertyPath: m_RootOrder
       value: 0

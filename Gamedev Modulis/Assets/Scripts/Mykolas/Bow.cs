@@ -25,7 +25,7 @@ public class Bow : BaseWeapon
                     release.Play();
                     //instance.transform.rotation = Quaternion.LookRotation(transform.up);
                     instance.GetComponent<BaseProjectile>().Setup(damage * currentCharge / 2, transform.parent.tag, 100);
-                    instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 1000 * currentCharge);
+                    instance.GetComponent<Rigidbody>().AddForce(transform.transform.forward * 45 * currentCharge, ForceMode.VelocityChange);
                 }
 
                 attacked = true;
