@@ -17,7 +17,7 @@ public class Infobox : MonoBehaviour
     }
     IEnumerator TurnOff()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         gameObject.SetActive(false);
     }
 }

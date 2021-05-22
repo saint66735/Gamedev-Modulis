@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitExplosion: {fileID: 3331473759611580077, guid: 213a5aac86c65a54fb8e7f8f90367038, type: 3}
+  infobox: {fileID: 0}
+  message: YOU SUCK
 --- !u!198 &5883822688296354667
 ParticleSystem:
   m_ObjectHideFlags: 0
