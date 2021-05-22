@@ -40,10 +40,11 @@ public class Enemy : BaseEntity
         Debug.Log("I'm dead");
         player.IncreaseXp(xpValue);
         alive = false;
+        player.count++;
         deathSound.Play();
         foreach (Rigidbody rbi in rigidbodies)
             rbi.isKinematic = false;
 
-        QuestGiver.killCount++;
+        //QuestGiver.killCount++;
     }
 }

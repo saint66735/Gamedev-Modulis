@@ -11,6 +11,7 @@ public class Player : BaseEntity
     public float level = 1;
     [SerializeField]
     public int xp = 0;
+    public int count = 0;
     public float xpReq = 10;
     public Transform attackPoint;
     public BaseWeapon weapon;
@@ -133,5 +134,14 @@ public class Player : BaseEntity
     {
         Debug.Log("i has dieded");
         alive = false;
+    }
+
+    public void KillCountAdd()
+    {
+        count += 1;
+    }
+    public void killCountReset()
+    {
+        count = 0;
     }
 }

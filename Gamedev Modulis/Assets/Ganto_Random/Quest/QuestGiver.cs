@@ -42,7 +42,7 @@ public class QuestGiver : MonoBehaviour
         }
 
         
-        if (killCount >= quest.reqToKill && (quest.isCompleted == false)) 
+        if (player.count >= quest.reqToKill && (quest.isCompleted == false)) 
         {
 
             CompleteQuest();
@@ -67,11 +67,12 @@ public class QuestGiver : MonoBehaviour
         quest.isActive = true;
         quest.isCompleted = false;
         player.quest = quest;
-
         enemys.SetActive(true);
+        player.killCountReset();
 
 
-    
+
+
     }
 
     public void CloseQuestWindow()
@@ -83,6 +84,7 @@ public class QuestGiver : MonoBehaviour
     {
         quest.isCompleted = true;
         quest.isActive = false;
+        player.killCountReset();
         player.IncreaseXp(quest.ExpRewardas);
 
     }
