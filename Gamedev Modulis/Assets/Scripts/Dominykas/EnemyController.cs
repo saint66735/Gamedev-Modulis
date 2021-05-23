@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 15f;
-    public float attackRange = 1f;
+    public float attackRange = 2f;
     NavMeshAgent agent;
     PlayerManager manager;
     bool playerLocated = false;
@@ -34,17 +34,17 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    IEnumerator WaitingXD(float distance)
-    {
+    // IEnumerator WaitingXD(float distance)
+    // {
         
-        yield return new WaitForSeconds(1);
-        if(distance <= attackRange)
-        {
-            manager.player.GetComponent<Player>().TakeDamage(0.1f);
+    //     yield return new WaitForSeconds(1);
+    //     if(distance <= attackRange)
+    //     {
+    //         manager.player.GetComponent<Player>().TakeDamage(0.1f);
             
-        }
+    //     }
 
-    }
+    // }
 
     // Update is called once per frame
     void Update()
@@ -110,7 +110,7 @@ public class EnemyController : MonoBehaviour
             {
                 agent.speed = 0;
                 anima.SetBool("AttackRange", true);  
-                StartCoroutine(WaitingXD(distance));                 
+                                 
             }
             else
             {
@@ -123,7 +123,6 @@ public class EnemyController : MonoBehaviour
         
                 
     }
-
 
 
     void OnDrawGizmosSelected()
