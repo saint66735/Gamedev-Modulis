@@ -60,9 +60,6 @@ public class EnemyController : MonoBehaviour
         }
         else if(enemy.health <= enemy.maxHealth/2)
         {
-            transform.LookAt(manager.player.transform);
-            Vector3 away = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z)*-1;
-            transform.rotation = Quaternion.Euler(away);            
             Vector3 run = new Vector3(transform.position.x,transform.position.y,transform.position.z);
             if(transform.position.x>manager.player.transform.position.x)
             {
