@@ -37,9 +37,9 @@ public class BaseEntity : MonoBehaviour
                 Die();
             }
         }
-        else if (collision.collider.tag == "Weapon" && !CompareTag(collision.collider.GetComponent<BaseWeapon>().attacker))
+        else if (collision.collider.tag == "Weapon" && !CompareTag(collision.collider.GetComponentInParent<BaseWeapon>().attacker))
         {
-            TakeDamage(collision.collider.GetComponent<BaseWeapon>().damage);
+            TakeDamage(collision.collider.GetComponentInParent<BaseWeapon>().damage);
             if (health <= 0 && alive)
             {
                 Die();
