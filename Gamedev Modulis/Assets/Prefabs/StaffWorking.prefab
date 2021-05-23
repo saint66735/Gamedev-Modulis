@@ -417,6 +417,10 @@ PrefabInstance:
       value: HandsWithoutShoulders
       objectReference: {fileID: 0}
     - target: {fileID: 2196312855207597657, guid: 7ce0c791687f1424b9f5d8e3b3d03290, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196312855207597657, guid: 7ce0c791687f1424b9f5d8e3b3d03290, type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
@@ -507,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 4808215801866854624, guid: 7ce0c791687f1424b9f5d8e3b3d03290, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808215801866854624, guid: 7ce0c791687f1424b9f5d8e3b3d03290, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4808215801866854624, guid: 7ce0c791687f1424b9f5d8e3b3d03290, type: 3}
       propertyPath: m_UpdateWhenOffscreen
