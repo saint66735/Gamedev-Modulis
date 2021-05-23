@@ -13,6 +13,16 @@ public class SceneLogic : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void Update() 
+    {
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            Restart();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
+    }
 
     // Update is called once per frame
    
