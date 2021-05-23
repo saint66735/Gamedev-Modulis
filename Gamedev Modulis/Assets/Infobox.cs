@@ -7,7 +7,7 @@ public class Infobox : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        StartCoroutine(TurnOff());
+        //StartCoroutine(TurnOff());
     }
 
     // Update is called once per frame
@@ -15,9 +15,9 @@ public class Infobox : MonoBehaviour
     {
         
     }
-    IEnumerator TurnOff()
-    {
-        yield return new WaitForSeconds(5);
-        gameObject.SetActive(false);
-    }
+    //IEnumerator TurnOff()
+    //{
+    //    //yield return new WaitForSeconds(5);
+    //    //gameObject.SetActive(false);
+    //}
 }

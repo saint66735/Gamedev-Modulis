@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 5883822688296354667}
   - component: {fileID: 5883822688296354664}
   - component: {fileID: 5883822688296354665}
+  - component: {fileID: 1586669509}
   m_Layer: 0
   m_Name: InfoZenklas
   m_TagString: Untagged
@@ -328,7 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitExplosion: {fileID: 3331473759611580077, guid: 213a5aac86c65a54fb8e7f8f90367038, type: 3}
   infobox: {fileID: 0}
-  message: YOU SUCK
+  message: I should check out the lighthouse
+  InfoSignAnimator: {fileID: 0}
 --- !u!198 &5883822688296354667
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5115,3 +5117,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 0.5
   period: 1.5
+--- !u!95 &1586669509
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5883822688296354670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c59642fd2a13468479b059516743665c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

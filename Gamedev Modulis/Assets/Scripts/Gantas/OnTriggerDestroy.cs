@@ -10,6 +10,8 @@ public class OnTriggerDestroy : MonoBehaviour
     public string message;
     Text text;
 
+    public Animator InfoSignAnimator;
+
     void Start()
     {
         pos = gameObject.transform.position;
@@ -22,6 +24,7 @@ public class OnTriggerDestroy : MonoBehaviour
         {
             infobox.SetActive(true);
             text.text = message;
+            InfoSignAnimator.SetTrigger("IsOpen");
             GameObject instance = Instantiate(hitExplosion, pos, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
         }
