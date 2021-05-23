@@ -138,7 +138,7 @@ public class Player : BaseEntity
 
     public void KillCountAdd()
     {
-        count += 1;
+        count++;
     }
     public void killCountReset()
     {
