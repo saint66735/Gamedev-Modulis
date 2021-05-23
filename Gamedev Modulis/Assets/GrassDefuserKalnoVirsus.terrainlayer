@@ -7,7 +7,7 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassDefuserKalnoVirsus
-  m_DiffuseTexture: {fileID: 2800000, guid: b90de2f130cc1dd4683082ffe5c9c95b, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: f00f0bf16d663754e92bc8e8c50cdd60, type: 3}
   m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 2, y: 2}
