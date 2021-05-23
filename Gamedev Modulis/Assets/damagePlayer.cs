@@ -12,17 +12,17 @@ public class damagePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager = PlayerManager.FindObjectOfType<PlayerManager>();        
+        manager = PlayerManager.FindObjectOfType<PlayerManager>();
     }
 
 
     public void EndAttack()
-    {       
-        Debug.Log("MegaYikes");
+    {
         float distance = Vector3.Distance(manager.player.transform.position, transform.position);
-        if(distance < attackRange)
+        if (distance < attackRange)
         {
-            manager.player.GetComponent<Player>().TakeDamage(10f);
+            Player instance = manager.player.GetComponent<Player>();
+            instance.TakeDamage(10f * instance.level * 1.5f);
         }
     }
 }
