@@ -81,7 +81,6 @@ public class QuestGiver : MonoBehaviour
         player.quest = quest;
         enemys.SetActive(true);
         player.killCountReset();
-        //player.count = 0;
 
 
 
@@ -100,6 +99,7 @@ public class QuestGiver : MonoBehaviour
         player.killCountReset();
         player.count = 0;
         player.IncreaseXp(quest.ExpRewardas);
+        quest = null;
 
     }
 
