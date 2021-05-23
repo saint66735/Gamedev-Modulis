@@ -62,8 +62,7 @@ public class EnemyController : MonoBehaviour
         {
             transform.LookAt(manager.player.transform);
             Vector3 away = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z)*-1;
-            transform.rotation = Quaternion.Euler(away);
-            transform.rotation = Quaternion.Euler(away);
+            transform.rotation = Quaternion.Euler(away);            
             Vector3 run = new Vector3(transform.position.x,transform.position.y,transform.position.z);
             if(transform.position.x>manager.player.transform.position.x)
             {
@@ -90,31 +89,36 @@ public class EnemyController : MonoBehaviour
 
             if(distance <= hearRadius && minSpeed > 5f)
             {
+                anima.SetBool("DetectionRange", true);
                 canHear = true;
                 agent.speed = 10f;
                 agent.SetDestination(manager.player.transform.position);
             }
+            else
+            {
+                anima.SetBool("DetectionRange", false);
+            }
         
             if(distance <= lookRadius)
             {
-                anima.SetBool("PlayerDetected", true);   
+                anima.SetBool("ChaseRange", true);   
                 agent.SetDestination(manager.player.transform.position);            
             }
             else
             {
-                anima.SetBool("PlayerDetected", false);
+                anima.SetBool("ChaseRange", false);
             }   
 
             if(distance <= attackRange)
             {
                 agent.speed = 0;
-                anima.SetBool("PlayerNear", true);  
+                anima.SetBool("AttackRange", true);  
                 StartCoroutine(WaitingXD(distance));                 
             }
             else
             {
                 agent.speed = 5f;
-                anima.SetBool("PlayerNear", false);
+                anima.SetBool("AttackRange", false);
             }
         }
         

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellWeapon : BaseWeapon
 {
     public GameObject spell;
-    Animator ani;
+    public Animator ani;
     public Transform attackPoint;
 
     public Camera cam;
@@ -37,7 +37,7 @@ public class SpellWeapon : BaseWeapon
 
     private IEnumerator Timer()
     {
-        yield return new WaitForSeconds(0.52f);
+        yield return new WaitForSeconds(0.60f);
         AttackLogic();
     }
 
