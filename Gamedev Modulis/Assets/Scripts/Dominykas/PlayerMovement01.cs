@@ -110,6 +110,10 @@ public class PlayerMovement01 : BaseMovement
             {
                 speed = 15f;
             }
+            else if(Input.GetKey(KeyCode.Q))
+            {
+                speed = 50f;
+            }
             else if (Input.GetKey(KeyCode.LeftControl)) //Sneky
             {
                 speed = 5f;
