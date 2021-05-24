@@ -15,14 +15,12 @@ public class PlayerManager : MonoBehaviour
     }
 
     #endregion
-    public GameObject player;
-
+    public Player player;
     public PlayerMovement01 movement;
     public bool found = false;
 
     private void Start() 
     {
-
     }
 
     private void Update() 
@@ -30,7 +28,7 @@ public class PlayerManager : MonoBehaviour
         if(!found && GameObject.FindGameObjectWithTag("Player") != null)
         {
             movement = FindObjectOfType<PlayerMovement01>();
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = FindObjectOfType<Player>();
             found = true;
 
         }          
