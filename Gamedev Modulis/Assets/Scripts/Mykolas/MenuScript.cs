@@ -14,12 +14,10 @@ public class MenuScript : MonoBehaviour
     public GameObject bow;
     public GameObject spell;
     public GameObject lvlupText;
-    public List<GameObject> enemies;
     public GameObject LvlUpPopUp;
     public Slider sensitivitySlider;
 
     public GameObject HealthBar;
-    int i = 0;
     public Player playerScript;
     public GameObject rechargeSlider;
     public Text playerName;
@@ -31,14 +29,11 @@ public class MenuScript : MonoBehaviour
     public float FOV = 90f;
     private void Update()
     {
+        if(playerScript==null)
+        { return; }
         if (!playerScript.alive)
         {
             GameOver();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            enemies[i].SetActive(true);
-            i++;
         }
     }
 

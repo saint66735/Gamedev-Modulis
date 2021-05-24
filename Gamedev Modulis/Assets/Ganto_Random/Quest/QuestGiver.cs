@@ -29,7 +29,7 @@ public class QuestGiver : MonoBehaviour
 
     public static int killCount;
 
-    int destroyTime  = 8;
+    int destroyTime = 8;
 
 
     private void Start()
@@ -40,27 +40,27 @@ public class QuestGiver : MonoBehaviour
 
     private void Update()
     {
-        if (!found)
+        if (!found && FindObjectOfType<Player>() != null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            player = FindObjectOfType<Player>();
             if (player != null)
             {
                 found = true;
             }
         }
 
-        
-        if (player.count == quest.reqToKill && (quest.isActive == true)) 
-        {
+        if (found)
+            if (player.count == quest.reqToKill && (quest.isActive == true))
+            {
 
-            CompleteQuest();
-            CompleteShowQuest();
+                CompleteQuest();
+                CompleteShowQuest();
 
-        }
+            }
     }
 
 
-    public void OpenQuestWindow() 
+    public void OpenQuestWindow()
     {
         questWindow.SetActive(true);
 
@@ -72,7 +72,7 @@ public class QuestGiver : MonoBehaviour
         ExpCompeltedRewardas.text = quest.ExpRewardas.ToString();
     }
 
-    public void AcceptQuest() 
+    public void AcceptQuest()
     {
 
         CloseQuestWindow();
