@@ -27,6 +27,7 @@ public class SwitchDayNight : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 StartCoroutine("SwitchSky");
+                StartCoroutine("Active");
                 //SwitchSky();
             }
         }
@@ -50,7 +51,14 @@ public class SwitchDayNight : MonoBehaviour
             sun.intensity = sunIntensity;
         }
     }
-    private void OnTriggerEnter(Collider other)
+
+
+    IEnumerator Active()
+    {
+        yield return new WaitForSeconds(4);
+        sleepyobject.SetActive(false);
+    }
+        private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
