@@ -50,6 +50,7 @@ public class QuestGiver : MonoBehaviour
         }
 
         if (found)
+        {
             if (player.count == quest.reqToKill && (quest.isActive == true))
             {
 
@@ -57,6 +58,7 @@ public class QuestGiver : MonoBehaviour
                 CompleteShowQuest();
 
             }
+        }
     }
 
 

@@ -119,6 +119,20 @@ public class Player : BaseEntity
         health = maxHealth;
     }
 
+    public void Heal()
+    {
+        if (health == maxHealth)
+        {
+            Debug.Log("FullHp");
+        }
+        else
+        {
+            health = (health + 5) * Time.fixedDeltaTime;
+            Debug.Log("Healina");
+        }
+
+    }
+
     public void AtkSpeed()
     {
         weapon.DecreaseAttackDelay();

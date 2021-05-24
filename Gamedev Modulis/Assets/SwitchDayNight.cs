@@ -12,6 +12,8 @@ public class SwitchDayNight : MonoBehaviour
     public Light sun;
     float sunIntensity;
     float nightIntensity = 0.34f;
+    public GameObject sleepyobject;
+    public Animator Sleepy;
     void Start()
     {
         sunIntensity = sun.intensity;
@@ -24,21 +26,26 @@ public class SwitchDayNight : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                SwitchSky();
+                StartCoroutine("SwitchSky");
+                //SwitchSky();
             }
         }
     }
 
-    void SwitchSky()
+    IEnumerator SwitchSky()
     {
+        sleepyobject.SetActive(true);
+        Sleepy.SetTrigger("Start");
         if (RenderSettings.skybox == day)
         {
+            yield return new WaitForSeconds(2);
             RenderSettings.skybox = night;
             //Mathf.Lerp(sun.intensity, nightIntensity, 1*Time.deltaTime);
             sun.intensity = nightIntensity;
         }
         else
         {
+            yield return new WaitForSeconds(2);
             RenderSettings.skybox = day;
             sun.intensity = sunIntensity;
         }
